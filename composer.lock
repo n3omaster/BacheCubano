@@ -2610,9 +2610,9 @@
             "authors": [
                 {
                     "name": "Ben Corlett",
-                    "role": "Developer",
                     "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au"
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
                 }
             ],
             "description": "OAuth 1.0 Client Library",
@@ -3918,26 +3918,26 @@
         },
         {
             "name": "rennokki/befriended",
-            "version": "3.0.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rennokki/befriended.git",
-                "reference": "a79f3c17c19e42fd0608427c1b759ce5280e7215"
+                "reference": "bb8e2b4a6f39af2b541b3ad60ad6c55a3b19e1b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rennokki/befriended/zipball/a79f3c17c19e42fd0608427c1b759ce5280e7215",
-                "reference": "a79f3c17c19e42fd0608427c1b759ce5280e7215",
+                "url": "https://api.github.com/repos/rennokki/befriended/zipball/bb8e2b4a6f39af2b541b3ad60ad6c55a3b19e1b9",
+                "reference": "bb8e2b4a6f39af2b541b3ad60ad6c55a3b19e1b9",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.10",
-                "laravel/framework": "~5.5|^6.0"
+                "laravel/framework": "~5.5|^6.0|^7.0"
             },
             "require-dev": {
-                "orchestra/database": "~3.5.0|~3.6.0|~4.0.0",
-                "orchestra/testbench": "~3.5.0|~3.6.0|~4.0.0",
-                "phpunit/phpunit": "^6.2|^7.0|^8.0"
+                "orchestra/database": "~4.2.0|^5.0",
+                "orchestra/testbench": "~4.2.0|^5.0",
+                "phpunit/phpunit": "^8.0"
             },
             "type": "library",
             "extra": {
@@ -3959,7 +3959,6 @@
             "authors": [
                 {
                     "name": "Alex Renoki",
-                    "email": "rennokki@gmail.com",
                     "homepage": "https://twitter.com/rennokki",
                     "role": "Developer"
                 }
@@ -3982,7 +3981,7 @@
                 "model",
                 "social"
             ],
-            "time": "2020-01-16T17:50:44+00:00"
+            "time": "2020-03-09T06:57:53+00:00"
         },
         {
             "name": "rennokki/rating",
