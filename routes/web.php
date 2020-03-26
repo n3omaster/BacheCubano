@@ -59,7 +59,7 @@ Route::group(['prefix' => 'blog'], function () {
     Route::get('/create', 'BlogController@create')->name('blog_post_create')->middleware(['role:writer']);
     Route::get('/edit/{post_id}', 'BlogController@edit')->name('blog_post_edit')->middleware(['role:writer']);
     Route::post('/store', 'BlogController@store')->name('blog_store')->middleware(['role:writer']);
-    Route::post('/update', 'BlogController@update')->name('blog_update')->middleware(['role:writer']);
+    Route::post('/update/{post_id}', 'BlogController@update')->name('blog_update')->middleware(['role:writer']);
     Route::get('/{blog_category_slug?}/', 'BlogController@index')->name('blog_index');
     Route::get('/{blog_category_slug}/{entry_slug}', 'BlogController@show')->name('blog_post');
 });
