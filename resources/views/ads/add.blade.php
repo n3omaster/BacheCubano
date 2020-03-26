@@ -58,24 +58,15 @@
 
 <!-- Start Content -->
 <div id="content" class="section-padding">
-    <div class="container-fluid">
-
+    <div class="container">
         <div class="row">
-
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 page-sidebar d-none d-md-block">
-                @include('gads.v')
-            </div>
-
-            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-6">
-
+            <div class="col-lg-8 col-md-12 col-xs-12">
                 <form action="@if($edit){{ route('ad.update', ['ad' => $ad]) }}@else{{ route('ad.store') }}@endif" method="POST" name="add" class="form" id="add">
                     @csrf
-
                     @if($edit)
                     <input type="hidden" name="edit" value="{{ $ad->id }}">
                     @method('PUT')
                     @endif
-
                     <div class="inner-box">
                         <div class="dashboard-box">
                             <h2 class="dashbord-title">Detalles del anuncio:</h2>
@@ -258,37 +249,14 @@
                 </form>
             </div>
 
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 page-sidebar d-none d-md-block">
+            <aside id="sidebar" class="col-lg-4 col-md-12 col-xs-12 right-sidebar">
                 @include('gads.v')
-            </div>
+            </aside>
         </div>
     </div>
 </div>
 <!-- End Content -->
 
-<!-- featured Listing -->
-@include('blocks.featured-listing')
-<!-- featured Listing -->
-
-@push('script')
-<script src="https://cdn.tiny.cloud/1/wgmr4wcq67z5y9hof4fntp4hpk9432kmnzpgaatu0vjifwkh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
-    tinymce.init({
-        selector: 'textarea',
-        height: 600,
-        plugins: [
-            'advlist autolink link image imagetools lists charmap print preview hr anchor pagebreak spellchecker',
-            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-            'table emoticons template paste help'
-        ],
-        a11y_advanced_options: true,
-        image_caption: true,
-        image_advtab: true,
-        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | help',
-        menubar: 'file edit view insert format tools table help',
-        toolbar_mode: 'floating',
-    });
-</script>
 
 @if($edit)
 @push('script')
@@ -316,6 +284,33 @@
 </script>
 @endpush
 @endif
+
+@push('script')
+<script src="https://cdn.tiny.cloud/1/wgmr4wcq67z5y9hof4fntp4hpk9432kmnzpgaatu0vjifwkh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 600,
+        plugins: [
+            'advlist autolink link image imagetools lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'table emoticons template paste help'
+        ],
+        a11y_advanced_options: true,
+        image_caption: true,
+        image_advtab: true,
+        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | help',
+        menu: {
+            favs: {
+                title: 'My Favorites',
+                items: 'code visualaid | searchreplace | spellchecker | emoticons'
+            }
+        },
+        menubar: 'file edit view insert format tools table favs help',
+        toolbar_mode: 'floating',
+    });
+</script>
+@endpush
 
 @push('script')
 <!-- AJAX Uploading for Add Post -->
@@ -383,4 +378,5 @@
 @endguest
 
 @endpush
+
 @endsection

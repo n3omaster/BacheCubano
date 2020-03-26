@@ -85,14 +85,14 @@ Route::group(['prefix' => 'home', 'middleware' => 'auth'], function () {
     Route::post('/delete', 'HomeController@delete_account')->name('delete_account');
     Route::post('/update', 'HomeController@update_user')->name('update_user');
     Route::post('/update_password', 'HomeController@update_user_password')->name('update_user_password');
+
+    //SMS Routes
+    Route::get('/send_sms', 'HomeController@send_sms')->name('send_sms');
+
+    //Transfer Money Routes
+    Route::get('/transfer_money', 'HomeController@transfer_money')->name('transfer_money');
+    Route::post('/transfer_money', 'HomeController@transfer_money_post')->name('transfer_money_post');
 });
-
-//SMS Routes
-Route::get('/home/send_sms', 'HomeController@send_sms')->name('send_sms');
-
-//Trasnfer Money Routes
-Route::get('/home/transfer_money', 'HomeController@transfer_money')->name('transfer_money');
-Route::post('/home/transfer_money', 'HomeController@transfer_money_post')->name('transfer_money_post');
 
 //Sitemap Creator Has to be here, On Api breaks Urls from generated indexes
 Route::get('/sitemap', 'Api\SitemapController@sitemap_index')->name('sitemap_index');
