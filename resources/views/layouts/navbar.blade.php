@@ -136,7 +136,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">Blog</a>
+            <a href="{{ route('blog_index') }}">Blog</a>
             <ul class="dropdown">
                 @foreach($latest_blog_post as $blog_post)
                 <li><a href="{{ post_url($blog_post) }}">{{ $blog_post->title }}</a></li>
