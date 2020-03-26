@@ -1,7 +1,9 @@
 <!-- Blog Grid Start -->
 <section class="blog-grid section-padding bg-drack">
     <div class="container">
-        <h3 class="section-title">Últimas noticias</h3>
+        <a href="{{ route('blog_index') }}">
+            <h3 class="section-title">Últimas noticias</h3>
+        </a>
         <div class="row">
             @foreach($latest_blog_post as $blog_post)
             <div class="col-lg-4 col-md-6 col-xs-12">
