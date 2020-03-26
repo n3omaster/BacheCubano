@@ -36,6 +36,7 @@
 
                 <!-- Start Post -->
                 <div class="blog-post">
+
                     <!-- Post thumb -->
                     <div class="post-thumb">
                         <a href="{{ post_url($blog_post) }}"><img class="img-fluid" src="{{ config('app.img_url') }}blog/{{ $blog_post->cover }}" alt="{{ $blog_post->title }}"></a>
@@ -59,6 +60,7 @@
                         </div>
                     </div>
                     <!-- Post Content -->
+                    
                 </div>
                 <!-- End Post -->
 

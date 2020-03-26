@@ -38,7 +38,6 @@
 
                     @if($edit)
                     <input type="hidden" name="edit" value="{{ $blog_post->id }}">
-                    @method('PUT')
                     @endif
 
                     <div class="form-group mb-3">

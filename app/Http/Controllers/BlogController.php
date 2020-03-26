@@ -202,7 +202,6 @@ class BlogController extends Controller
         $this->validate(request(), [
             'title' => 'required|min:1|max:255',
             'body'  => 'required|min:1'
-            
         ]);
 
         //Get the Blog Post
@@ -227,8 +226,8 @@ class BlogController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Request $request, $post_id)
     {
-        //
+
     }
 }
