@@ -131,7 +131,8 @@ class BlogController extends Controller
             'title' => 'required|min:1|max:255',
             'category' => 'required|numeric',
             'body'  => 'required|min:1',
-            'tags' => 'required'
+            'tags' => 'required',
+            'cover' => 'required'
         ]);
 
         // store data with create() method
@@ -204,6 +205,9 @@ class BlogController extends Controller
             'body'  => 'required|min:1'
         ]);
 
+        //¿Cover Update?
+        
+
         //Get the Blog Post
         $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
 
@@ -213,8 +217,6 @@ class BlogController extends Controller
             'body'      => $request->input('body'),
             'tags' => $request->input('tags')
         ]);
-
-        //dd($blog_post);
 
         // return to show post URL
         return redirect(post_url($blog_post));
