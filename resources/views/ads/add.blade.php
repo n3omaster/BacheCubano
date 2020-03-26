@@ -135,7 +135,12 @@
                                 @error('description')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
+
                                 <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="8" style="resize: vertical">@if($edit){!! $ad->description->description !!}@else{!! old('description') !!}@endif</textarea>
+
+                                <!--
+                                    <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="8" style="resize: vertical">@if($edit){!! $ad->description->description !!}@else{!! old('description') !!}@endif</textarea>
+                                -->
                             </div>
 
                             <!-- Image grid for Ajax deletion -->
@@ -264,6 +269,26 @@
 <!-- featured Listing -->
 @include('blocks.featured-listing')
 <!-- featured Listing -->
+
+@push('script')
+<script src="https://cdn.tiny.cloud/1/wgmr4wcq67z5y9hof4fntp4hpk9432kmnzpgaatu0vjifwkh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 600,
+        plugins: [
+            'advlist autolink link image imagetools lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'table emoticons template paste help'
+        ],
+        a11y_advanced_options: true,
+        image_caption: true,
+        image_advtab: true,
+        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | help',
+        menubar: 'file edit view insert format tools table help',
+        toolbar_mode: 'floating',
+    });
+</script>
 
 @if($edit)
 @push('script')

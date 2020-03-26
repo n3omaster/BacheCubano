@@ -3,7 +3,6 @@
 @section('content')
 
 @push('style')
-<script src="https://cdn.tiny.cloud/1/wgmr4wcq67z5y9hof4fntp4hpk9432kmnzpgaatu0vjifwkh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <link href="{{ asset('css/uppy.min.css') }}" rel="stylesheet">
 @endpush
 
@@ -97,6 +96,7 @@
 <!-- End Content -->
 
 @push('script')
+<script src="https://cdn.tiny.cloud/1/wgmr4wcq67z5y9hof4fntp4hpk9432kmnzpgaatu0vjifwkh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector: 'textarea',
