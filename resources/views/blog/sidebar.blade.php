@@ -19,6 +19,8 @@
 
     @endauth
 
+    @include('gads.v')
+
     <!-- Categories Widget -->
     <div class="widget categories">
         <h4 class="widget-title">Todas las Categorías</h4>

@@ -65,6 +65,8 @@
                 @endforeach
                 @endif
                 
+                @include('gads.h')
+
             </div>
 
             <!-- Start Pagination -->

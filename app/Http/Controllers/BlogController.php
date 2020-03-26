@@ -44,6 +44,9 @@ class BlogController extends Controller
             $posts = Post::where('enabled', 1)->with('owner', 'category')->latest()->paginate(10);
         }
 
+        //Schema
+        
+
         //Bog Categories
         $blog_categories = Cache::remember('blog_categories', 60 * 24, function () {
             return PostCategory::where('enabled', 1)->get();
@@ -199,6 +202,7 @@ class BlogController extends Controller
         $this->validate(request(), [
             'title' => 'required|min:1|max:255',
             'body'  => 'required|min:1'
+            
         ]);
 
         //Get the Blog Post
