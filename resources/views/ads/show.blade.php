@@ -32,7 +32,6 @@
     <div class="container-fluid">
         <!-- Product Info Start -->
         <div class="product-info row">
-
             <div class="col-xs-12 col-md-6 col-lg-3 col-xl-3 text-center mb-3">
                 @if(count($ad->resources) > 1)
                 <div class="owl-carousel owl-theme" id="product-carousel">
@@ -81,13 +80,9 @@
                     })
                 </script>
                 @endpush
-
                 @else
                 <img src="{{ ad_first_image($ad) }}" class="img-fluid tg-image" alt="{{ text_clean($ad->description->title) }}" loading=lazy>
                 @endif
-
-                @include('gads.v')
-
             </div>
 
             <div class="col-xs-12 col-md-6 col-lg-6 col-xl-7 pr-5 pl-5">
@@ -143,6 +138,8 @@
                     </p>
                     @endif
 
+                    @include('gads.h')
+
                 </div>
             </div>
 
@@ -164,7 +161,6 @@
                             <a href="{{ route('send_sms', ['number' => $ad->phone, 'message' => 'Hola ' . $ad->contact_name . ', me interesa su anuncio #' . $ad->id]) }}" class="btn btn-common btn-block" title="Enviar SMS a {{ $ad->contact_name }}"><i class="lni-bubble"></i> {{ $ad->phone }}</a>
                             @endif
                         </div>
-
 
                         @auth
                         <hr>
@@ -195,10 +191,10 @@
                                     <i class="lni-heart"></i>
                                     @endauth
                                 </a>
-                                <a class="facebook mb-2" href="{{ route('share', ['network' => 'facebook', 'url' => base64_encode(URL::current()), 'text' => base64_encode($ad->description->title)]) }}"><i class="lni-facebook"></i></a>
-                                <a class="twitter mb-2" href="{{ route('share', ['network' => 'twitter', 'url' => base64_encode(URL::current()), 'text' => base64_encode($ad->description->title)]) }}"><i class="lni-twitter"></i></a>
-                                <a class="linkedin mb-2" href="{{ route('share', ['network' => 'linkedin', 'url' => base64_encode(URL::current()), 'text' => base64_encode($ad->description->title)]) }}"><i class="lni-linkedin"></i></a>
-                                <a class="facebook mb-2" href="fb-messenger://share/?link={{URL::current()}}&app_id={{config('services.facebook_poster.app_id')}}"><i class="lni-facebook-messenger"></i></a>
+                                <a class="facebook mb-2" href="{{ route('share', ['network' => 'facebook', 'url' => base64_encode(URL::current()), 'text' => base64_encode($ad->description->title)]) }}" target="_blank"><i class="lni-facebook"></i></a>
+                                <a class="twitter mb-2" href="{{ route('share', ['network' => 'twitter', 'url' => base64_encode(URL::current()), 'text' => base64_encode($ad->description->title)]) }}" target="_blank"><i class="lni-twitter"></i></a>
+                                <a class="linkedin mb-2" href="{{ route('share', ['network' => 'linkedin', 'url' => base64_encode(URL::current()), 'text' => base64_encode($ad->description->title)]) }}" target="_blank"><i class="lni-linkedin"></i></a>
+                                <a class="facebook mb-2" href="fb-messenger://share/?link={{URL::current()}}&app_id={{config('services.facebook_poster.app_id')}}"><i class="lni-facebook-messenger" target="_blank"></i></a>
                             </div>
                         </div>
 

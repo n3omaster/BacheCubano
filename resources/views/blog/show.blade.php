@@ -48,10 +48,10 @@
                         <div class="share-items">
                             <ul class="list-inline">
                                 <li>Compartir: </li>
-                                <li class="fb-share"><a href="{{ route('share', ['network' => 'facebook', 'url' => base64_encode(URL::current()), 'text' => base64_encode($blog_post->title)]) }}"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="tw-share"><a href="{{ route('share', ['network' => 'twitter', 'url' => base64_encode(URL::current()), 'text' => base64_encode($blog_post->title)]) }}"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="li-share"><a href="{{ route('share', ['network' => 'linkedin', 'url' => base64_encode(URL::current()), 'text' => base64_encode($blog_post->title)]) }}"><i class="lni-linkedin-filled"></i></a></li>
-                                <li class="te-share"><a href="{{ 'https://telegram.me/share/url?url=https://t.me/iv?url=' . urlencode(URL::current() . '&rhash=0929b8713a7588') }}"><i class="lni-telegram"></i></a></li>
+                                <li class="fb-share"><a href="{{ route('share', ['network' => 'facebook', 'url' => base64_encode(URL::current()), 'text' => base64_encode($blog_post->title)]) }}" target="_blank"><i class="lni-facebook-filled"></i></a></li>
+                                <li class="tw-share"><a href="{{ route('share', ['network' => 'twitter', 'url' => base64_encode(URL::current()), 'text' => base64_encode($blog_post->title)]) }}" target="_blank"><i class="lni-twitter-filled"></i></a></li>
+                                <li class="li-share"><a href="{{ route('share', ['network' => 'linkedin', 'url' => base64_encode(URL::current()), 'text' => base64_encode($blog_post->title)]) }}" target="_blank"><i class="lni-linkedin-filled"></i></a></li>
+                                <li class="te-share"><a href="{{ 'https://telegram.me/share/url?url=https://t.me/iv?url=' . urlencode(URL::current() . '&rhash=0929b8713a7588') }}" target="_blank"><i class="lni-telegram"></i></a></li>
                             </ul>
                         </div>
                     </div>
