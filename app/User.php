@@ -18,7 +18,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Rater, Following
 {
-    use HasApiTokens, Notifiable, CanLike, CanRate,Follow;
+    use HasApiTokens, Notifiable, CanLike, CanRate, Follow;
 
     //Spatie Roles
     use HasRoles;
@@ -29,7 +29,7 @@ class User extends Authenticatable implements Rater, Following
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'website' . 'phone', 'profile_picture', 'signature'
+        'name', 'email', 'password', 'website' . 'phone', 'profile_picture', 'signature', 'social_facebook', 'social_twitter', 'social_youtube'
     ];
 
     /**
@@ -105,5 +105,4 @@ class User extends Authenticatable implements Rater, Following
     /**
      * Create wallet on user creation
      */
-    
 }

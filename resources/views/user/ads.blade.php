@@ -11,6 +11,19 @@
     <div class="inner-box">
         <div class="dashboard-box">
             <h2 class="dashbord-title">Mis anuncios</h2>
+            <div class="float-right">
+                <form action="{{ route('my_ads') }}">
+                    <div class="search-inner">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="search-query">
+                                    <input type="text" name="s" class="form-control" placeholder="Buscar entre tus anuncios" autocomplete="on" value="{{ Request::input('s') }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="dashboard-wrapper">
             <nav class="nav-table mb-1">
@@ -34,19 +47,6 @@
                             </optgroup>
                             @endforeach
                         </select>
-                    </li>
-                    <li class="float-right">
-                        <form action="{{ route('my_ads') }}">
-                            <div class="search-inner">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="search-query">
-                                            <input type="text" name="s" class="form-control" placeholder="Buscar entre tus anuncios" autocomplete="on" value="{{ Request::input('s') }}">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
                     </li>
                 </ul>
             </nav>

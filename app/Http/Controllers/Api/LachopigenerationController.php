@@ -49,14 +49,21 @@ class LachopigenerationController extends Controller
      */
     public function generate(Request $request)
     {
-        //Get DB Link and perform somr cleaning operations
-        $this->bd = new SQLite3('./sitios/lachopi/chcenter.db');
 
+        //Copy a new DB from the matrix DB
+        $new_db_name = "chcenter-" . date("Ymd") . "-" . rand(0, 999) . ".db";
+
+        copy('./sitios/lachopi/chcenter copy.db', './sitios/lachopi/' . $new_db_name);
+
+        //Get DB Link and perform somr cleaning operations
+        $this->bd = new SQLite3('./sitios/lachopi/' . $new_db_name);
+
+        /*
         $this->logs .= "<h2>Delete All tables data (TRUNCATE)</h2>";
 
         //$this->bd->query("SET LOCK MODE TO WAIT 120");
         //$this->bd->busyTimeout(6000);
-        
+
         $this->bd->exec("DELETE FROM meta");
         sleep(10);
         $this->bd->exec("DELETE FROM imagenes");
@@ -66,6 +73,7 @@ class LachopigenerationController extends Controller
         $this->bd->exec("DELETE FROM anuncios");
         sleep(600);
         $this->bd->exec("VACUUM");
+        */
 
         //Generate and Save Categories
         $result = $this->generate_categories();

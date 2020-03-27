@@ -12,9 +12,9 @@
             <h2 class="dashbord-title">Configuración de cuenta</h2>
         </div>
         <div class="dashboard-wrapper">
-            <div class="row form-dashboard">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 mb-md-5">
 
+            <div class="row form-dashboard">
+                <div class="col-12">
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -24,23 +24,19 @@
                         </ul>
                     </div>
                     @endif
-
                     <div class="privacy-box privacysetting">
-
                         <div class="dashboardboxtitle">
                             <h2>Preferencias de usuario:</h2>
                         </div>
-
                         <div class="dashboardholder mb-md-5">
                             <div class="user">
-                                <!-- Drop Zone -->
-                                <label for="name">Su foto de perfil:</label>
-
-                                <div class="DashboardContainer"></div>
-
                                 <div class="usercontent mt-3">
                                     <form class="" method="post" action="{{ route('update_user') }}" id="user-data">
                                         @csrf
+
+                                        <input name="social_facebook" type="hidden" value="{{ Auth::user()->social_facebook }}">
+                                        <input name="social_twitter" type="hidden" value="{{ Auth::user()->social_twitter }}">
+                                        <input name="social_youtube" type="hidden" value="{{ Auth::user()->social_youtube }}">
 
                                         <div class="form-group mb-3">
                                             <label for="name">Su nombre:</label>
@@ -54,7 +50,7 @@
 
                                         <div class="form-group mb-3">
                                             <label for="name" class="text-left">Firma de sus anuncios:</label>
-                                            <textarea class="form-control" name="signature">{{ Auth::user()->signature }}</textarea>
+                                            <textarea class="form-control" name="signature" rows="4">{{ Auth::user()->signature }}</textarea>
                                         </div>
 
                                         <button class="btn btn-common btn-block" type="submit">Actualizar</button>
@@ -67,34 +63,77 @@
             </div>
 
             <div class="row form-dashboard">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 mb-md-5">
+                <div class="col-12">
                     <div class="privacy-box privacysetting">
+                        <div class="dashboardboxtitle">
+                            <h2>Su foto de perfil:</h2>
+                        </div>
+                        <div class="dashboardholder mb-md-5">
+                            <div class="DashboardContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row form-dashboard">
+                <div class="col-12">
+                    <div class="privacy-box privacysetting">
+                        <div class="dashboardboxtitle">
+                            <h2>Redes sociales:</h2>
+                        </div>
+                        <div class="dashboardholder mb-md-5">
+                            <form class="" method="post" action="{{ route('update_user') }}" id="user-data">
+                                @csrf
+
+                                <input name="name" type="hidden" value="{{ Auth::user()->name }}">
+                                <input name="phone" type="hidden" value="{{ Auth::user()->phone }}">
+                                <input name="signature" type="hidden" value="{{ Auth::user()->signature }}">
+
+                                <div class="form-group mb-3">
+                                    <label for="name">Facebook:</label>
+                                    <input class="form-control" name="social_facebook" value="{{ Auth::user()->social_facebook }}" placeholder="https://www.facebook.com/Bachecubano">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="name">Twitter:</label>
+                                    <input class="form-control" name="social_twitter" value="{{ Auth::user()->social_twitter }}" placeholder="https://www.twitter.com/Bachecubano">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="name">Youtube:</label>
+                                    <input class="form-control" name="social_youtube" value="{{ Auth::user()->social_youtube }}" placeholder="https://www.youtube.com/Bachecubano">
+                                </div>
+
+                                <button class="btn btn-common btn-block" type="submit">Actualizar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-dashboard">
+                <div class="col-12">
+                    <div class="privacy-box privacysetting">
                         <div class="dashboardboxtitle">
                             <h2>Cambiar contraseña:</h2>
                         </div>
-
                         <div class="dashboardholder mb-md-5">
                             <div class="user">
                                 <div class="usercontent mt-3">
                                     <form class="" method="post" action="{{ route('update_user_password') }}" id="user-data">
                                         @csrf
-
                                         <div class="form-group mb-3">
                                             <label for="name">Contraseña actual:</label>
                                             <input class="form-control" type="password" name="current_password" placeholder="****************">
                                         </div>
-
                                         <div class="form-group mb-3">
                                             <label for="name">Nueva contraseña:</label>
                                             <input class="form-control" type="password" name="new_password" placeholder="****************">
                                         </div>
-
                                         <div class="form-group mb-3">
                                             <label for="name">Repita nueva contraseña:</label>
                                             <input class="form-control" type="password" name="new_password2" placeholder="****************">
                                         </div>
-
                                         <button class="btn btn-common btn-block" type="submit">Actualizar</button>
                                     </form>
                                 </div>
@@ -105,7 +144,7 @@
             </div>
 
             <div class="row form-dashboard">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+                <div class="col-12">
                     <hr>
                     <div class="privacy-box deleteaccount">
                         <div class="dashboardboxtitle">

@@ -20,17 +20,15 @@
 
 <!-- Start Content -->
 <div id="content" class="section-padding">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-2 page-sidebar">
+            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 page-sidebar">
                 @auth
                 @include('user.sidebar')
                 @endauth
             </div>
 
-            <div class="col-sm-12 col-md-8 col-lg-9 col-xl-10">
-
+            <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <!-- notifications area -->
                 @if (session('error'))
                 <div class="alert alert-danger">{{ session('error') }}</div>
@@ -38,7 +36,6 @@
                 @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
-
                 <!-- Dinamic section -->
                 @yield('user_section')
             </div>
@@ -46,10 +43,5 @@
     </div>
 </div>
 <!-- End Content -->
-
-@push('script')
-<!-- ManyChat only visible on user pages -->
-<script async src="//widget.manychat.com/1407854356137306.js"></script>
-@endpush
 
 @endsection

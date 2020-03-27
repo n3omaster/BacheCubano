@@ -1,3 +1,9 @@
+### v2.0
+
+    - User links
+    - Blog Beta
+    - Dynamic Ads Pricing Promotion
+
 ### v1.9.1
 
     - Provinces subdomain xxx.bachecubano.com for index ads

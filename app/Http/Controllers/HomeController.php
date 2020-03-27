@@ -250,6 +250,12 @@ class HomeController extends Controller
         $me->name = $request->input('name');
         $me->phone = $request->input('phone');
         $me->signature = $request->input('signature');
+
+        //Social Links update
+        $me->social_facebook = $request->input('social_facebook') ? $request->input('social_facebook') : "";
+        $me->social_twitter = $request->input('social_twitter') ? $request->input('social_twitter') : "";
+        $me->social_youtube = $request->input('social_youtube') ? $request->input('social_youtube') : "";
+
         $me->update();
 
         //flash sesion message
