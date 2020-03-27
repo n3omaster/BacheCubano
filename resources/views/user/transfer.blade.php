@@ -8,7 +8,8 @@
         </div>
         <div class="dashboard-wrapper">
             <div class="row form-dashboard">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 mb-md-5">
+                <div class="col-12">
+
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>

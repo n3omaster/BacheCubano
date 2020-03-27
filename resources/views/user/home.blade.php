@@ -22,7 +22,7 @@
                     <div class="dashboardbox">
                         <div class="icon"><i class="lni-star"></i></div>
                         <div class="contentbox">
-                            <h2><a href="{{ route('my_ads') }}?promoted=1">Anuncios promovidos</a></h2>
+                            <h2><a href="{{ route('my_ads') }}?promoted=1">Promovidos</a></h2>
                             <h3>{{ $total_promoted_ads }} Promociones</h3>
                         </div>
                     </div>
