@@ -751,7 +751,7 @@ class AdController extends Controller
         //hashTag Search
         if ($request->has('ht')) {
             $query->when($request->input('ht') != "", function ($q) use ($request) {
-                return $q->where('body', 'LIKE', "%#{$request->input('ht', "#bache")}%");
+                return $q->where('body', 'LIKE', "%#{$request->input('ht', "bache")}");
             });
         }
 

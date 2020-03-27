@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\PostCategory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -13,19 +14,27 @@ use OpenGraph;
 use Twitter;
 
 use Illuminate\Support\Facades\Cache;
+use Spatie\SchemaOrg\Schema;
+use stdClass;
 
 class BlogController extends Controller
 {
     /**
      * Blog Index
      */
-    public function index($category = "")
+    public function index(Request $request, $category = "")
     {
         //SEO Data
         $seo_data = [
             'title' => "Blog de Noticias Comercio y Compra venta en Cuba",
             'desc' => "Noticias, ofertas, reviews e información general sobre la compra venta en Cuba",
         ];
+        if ($request->has('s')) {
+            $seo_data = [
+                'title' => "Buscando " . $request->input('s') . " en el Blog Bachecubano",
+                'desc' => "Buscando " . $request->input('s') . " en el Blog Bachecubano. Todo sobre tecnolog'ia y noticias de negocios en Cuba"
+            ];
+        }
         SEOMeta::setTitle($seo_data['title']);
         SEOMeta::setDescription($seo_data['desc']);
         Twitter::setTitle($seo_data['title']);
@@ -38,14 +47,23 @@ class BlogController extends Controller
             //Try to get this Category Details or fail
             $category = PostCategory::where('slug', $category)->firstOrFail();
             //Latest 10 post
-            $posts = Post::where('enabled', 1)->where('category_id', $category->id)->with('owner', 'category')->latest()->paginate(10);
+            $post_query = Post::where('enabled', 1)->where('category_id', $category->id)->with('owner', 'category')->latest();
         } else {
             //Latest 10 post
-            $posts = Post::where('enabled', 1)->with('owner', 'category')->latest()->paginate(10);
+            $post_query = Post::where('enabled', 1)->with('owner', 'category')->latest();
         }
 
+        //Search terms
+        if ($request->has('s') && $request->input('s') != "") {
+            $post_query->where('title', 'LIKE', "%{$request->input('s')}%");
+            $post_query->where('body', 'LIKE', "%{$request->input('s')}%");
+            $post_query->where('tags', 'LIKE', "%{$request->input('s')}%");
+        }
+
+        $posts = $post_query->paginate(10);
+
         //Schema
-        
+
 
         //Bog Categories
         $blog_categories = Cache::remember('blog_categories', 60 * 24, function () {
@@ -53,8 +71,15 @@ class BlogController extends Controller
         });
 
         //BreadCrumbs
+        $BreadCrumbs = Schema::breadcrumbList()
+            ->itemListElement([
+                Schema::ListItem()
+                    ->position(1)
+                    ->name("Blog Bachecubano")
+                    ->item(config('app.url') . "blog/")
+            ]);
 
-        return view('blog.index', compact('posts', 'blog_categories'));
+        return view('blog.index', compact('posts', 'blog_categories', 'BreadCrumbs', 'category', 'seo_data'));
     }
 
     /**
@@ -90,6 +115,7 @@ class BlogController extends Controller
         });
 
         //BreadCrumbs
+
 
         //SchemaOrg
 
@@ -198,7 +224,7 @@ class BlogController extends Controller
         if (!Auth::check() || (Auth::id() !== $blog_post->user_id && Auth::id() !== 1)) {
             abort(404);
         }
-        
+
         // validate incoming request data with validation rules
         $this->validate(request(), [
             'title' => 'required|min:1|max:255',
@@ -206,7 +232,7 @@ class BlogController extends Controller
         ]);
 
         //¿Cover Update?
-        
+
 
         //Get the Blog Post
         $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
@@ -230,6 +256,5 @@ class BlogController extends Controller
      */
     public function destroy(Request $request, $post_id)
     {
-
     }
 }

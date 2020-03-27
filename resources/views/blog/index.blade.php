@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="breadcrumb-wrapper">
                     <a href="{{ URL::current() }}">
-                        <h1 class="product-title">Blog Bachecubano</h1>
+                        <h1 class="product-title">{{ $seo_data['title'] }}</h1>
                     </a>
                 </div>
             </div>
@@ -21,7 +21,11 @@
 <ol class="breadcrumb">
     <li><a href="{{ config('app.url') }}">Inicio</a></li>
     <li class="ml-2">/</li>
-    <li class="ml-2"><a href="{{ URL::current() }}">Blog Bachecubano</a></li>
+    <li class="ml-2"><a href="{{ route('blog_index') }}">{{ $seo_data['title'] }}</a></li>
+    @if(isset($category->name))
+    <li class="ml-2">/</li>
+    <li class="current ml-2">{{ $category->name }}</li>
+    @endif
 </ol>
 
 <!-- Start Content -->
@@ -60,13 +64,13 @@
                         </div>
                     </div>
                     <!-- Post Content -->
-                    
+
                 </div>
                 <!-- End Post -->
 
                 @endforeach
                 @endif
-                
+
                 @include('gads.h')
 
             </div>

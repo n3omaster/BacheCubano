@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="breadcrumb-wrapper">
                     <a href="{{ URL::current() }}">
-                        <h2 class="product-title">Ups, parece que esto ya esto no existe</h2>
+                        <h2 class="product-title">Ups, parece que esto ya no existe</h2>
                     </a>
                 </div>
             </div>
