@@ -53,7 +53,7 @@
                 </div>
                 <div class="widget-content">
                     <a href="{{ post_url($blog_post) }}">{{ $blog_post->title }}</a>
-                    <span><i class="icon-calendar"></i>{{ $blog_post->updated_at->format('d/m/Y') }}</span>
+                    <span><i class="icon-calendar"></i>{{ $blog_post->created_at->format('d/m/Y') }}</span>
                 </div>
                 <div class="clearfix"></div>
             </li>

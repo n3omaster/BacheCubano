@@ -18,7 +18,7 @@ return [
              */
             'url' => '/feed',
 
-            'title' => 'Noticias Bachecubano, información sobre negocios y descuentos',
+            'title' => 'Tecnología, tutoriales, noticias sobre el emprendizaje y comercio electrónico en Cuba',
 
             /*
              * The view that will render the feed.
