@@ -56,6 +56,9 @@
                     </div>
                     <!-- Post Content -->
                 </div>
+
+                @include('blog.author-bio')
+
                 <!-- End Post -->
                 <div id="disqus_thread"></div>
 

@@ -179,3 +179,15 @@ if (!function_exists('post_url')) {
         return config('app.url') . "blog" . DIRECTORY_SEPARATOR . $post->category->slug . DIRECTORY_SEPARATOR . $post->slug;
     }
 }
+
+//Constructed ad url
+if (!function_exists('twitter_username')) {
+    /**
+     * Obtiene la URL de un anuncio pasando el $ad object
+     */
+    function twitter_username($social_twitter_url)
+    {
+        $user_name = explode("/", $social_twitter_url);
+        return array_pop($user_name);
+    }
+}
