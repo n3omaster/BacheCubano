@@ -51,8 +51,7 @@
                                 <input type="hidden" value="bachecubano/XeKg" name="uri" />
                                 <input type="hidden" name="loc" value="es_ES" />
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Dirección de correo" required="" />
-                                <button type="submit" value="Subscribe"><i class="lni-check-box"></i></button>
-                                <div class="clearfix"></div>
+                                <button type="submit" value="Subscribe" class="btn btn-common btn-block mt-1">Suscribirme</button>
                             </div>
                         </form>
 
