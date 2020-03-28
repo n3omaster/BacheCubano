@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400|Open+Sans">
 
     <!-- blog Feeds -->
-    <link rel="alternate" type="application/atom+xml" title="Blog y Noticias Bachecubano" href="{{ app.url }}feed">
+    <link rel="alternate" type="application/atom+xml" title="Blog y Noticias Bachecubano" href="{{ config('app.url') }}feed">
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">

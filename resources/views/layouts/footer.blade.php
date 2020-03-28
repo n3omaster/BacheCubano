@@ -32,7 +32,7 @@
                     <div class="widget">
                         <h3 class="block-title">Ayuda & soporte</h3>
                         <ul class="menu">
-                        <li><a href="{{ route('blog_index') }}">Blog Bachecubano</a></li>
+                            <li><a href="{{ route('blog_index') }}">Blog Bachecubano</a></li>
                             <li><a href="https://m.me/Bachecubano">Chatea con Bachecubano</a></li>
                             <li><a href="#privacy-page">Política de Privacidad</a></li>
                             <li><a href="#report-user">Protección de compras</a></li>
@@ -45,13 +45,17 @@
                     <div class="widget">
                         <h3 class="block-title">Subscríbete a nosotros</h3>
                         <p class="text-sub">Llevamos más de {{ date('Y') - 2014 }} años ofreciendo lo mejor de la compra venta en Cuba, subscríbete a nuestras alertas de gangas por correo.</p>
-                        <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
+
+                        <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=bachecubano/XeKg', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                             <div class="form-group is-empty">
-                                <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Dirección de correo" required="">
-                                <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-check-box"></i></button>
+                                <input type="hidden" value="bachecubano/XeKg" name="uri" />
+                                <input type="hidden" name="loc" value="es_ES" />
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Dirección de correo" required="" />
+                                <button type="submit" value="Subscribe"><i class="lni-check-box"></i></button>
                                 <div class="clearfix"></div>
                             </div>
                         </form>
+
                         <ul class="footer-social">
                             <li><a class="facebook" href="https://www.facebook.com/Bachecubano" rel="nofollow"><i class="lni-facebook"></i></a></li>
                             <li><a class="instagram" href="https://www.instagram.com/Bachecubano" rel="nofollow"><i class="lni-instagram"></i></a></li>
