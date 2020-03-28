@@ -257,4 +257,13 @@ class BlogController extends Controller
     public function destroy(Request $request, $post_id)
     {
     }
+
+    /**
+     * Get Feeds
+     */
+    public function feeds()
+    {
+        $blog_posts = Post::getFeedItems();
+        return response()->view('feed', compact('blog_posts'))->header('Content-Type', 'text/xml');
+    }
 }

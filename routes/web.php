@@ -54,8 +54,8 @@ Route::get('/callback/{provider}', 'SocialController@callback')->name('social_ca
 Route::get('/css/bch1.css', 'WelcomeController@bachecubano_css')->name('bachecubano_css');
 Route::get('/js/bch1.js', 'WelcomeController@bachecubano_js')->name('bachecubano_js');
 
-//Blog and Best Ads Feeds
-Route::feeds();
+//Feeds
+Route::get('/feed', 'BlogController@feeds')->name('blog_feeds');
 
 //Blog access to create articles peremission role
 Route::group(['prefix' => 'blog'], function () {

@@ -3,13 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 use Overtrue\LaravelLike\Traits\CanBeLiked;
 
-use Spatie\Feed\Feedable;
-use Spatie\Feed\FeedItem;
-
-class Post extends Model implements Feedable
+class Post extends Model
 {
     use CanBeLiked;
 
@@ -34,24 +30,13 @@ class Post extends Model implements Feedable
         return $this->belongsTo('App\PostCategory');
     }
 
-    public function toFeedItem()
-    {
-        return FeedItem::create()
-            ->id($this->id)
-            ->title($this->title)
-            ->summary($this->title)
-            ->updated($this->updated_at)
-            ->link(post_url($this))
-            ->author($this->owner->name);
-    }
-
     /**
      * Get All Blog Post latest 40 
      * for Feed syndication
      */
-    public function getFeedItems()
+    public static function getFeedItems()
     {
-        return Post::latest()->take(40)->get();
+        return static::latest()->take(50)->get();
     }
 }
 
