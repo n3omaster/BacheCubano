@@ -5,9 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Overtrue\LaravelLike\Traits\CanBeLiked;
 
+use Illuminate\Notifications\Notifiable;
+
 class Post extends Model
 {
     use CanBeLiked;
+
+    //Allow this model to be used as Notifications
+    use Notifiable;
 
     // table name to be used
     protected $table = 'posts';

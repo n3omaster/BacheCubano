@@ -22,8 +22,8 @@ Route::group(['domain' => 'api.' . config('app.domain')], function () {
 
     Route::group(['prefix' => 'v1'], function () {
 
+        //Pretty webpage for API docs
         Route::get('/', 'Api\HomeController@index')->name('welcome_api')->middleware('cacheResponse:300');         //Cache 5min
-
         //Get Categories
         Route::get('categories', 'Api\AdsController@get_categories')->name('api_get_categories');
         //Get Ads From certain Category

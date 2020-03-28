@@ -91,7 +91,7 @@ class BlogController extends Controller
     {
         //Cache Post Entry
         $blog_post = Cache::remember('cached_post_' . $entry_slug, 120, function () use ($entry_slug) {
-            return Post::where('slug', $entry_slug)->firstOrFail();
+            return Post::with('category')->where('slug', $entry_slug)->firstOrFail();
         });
 
         //SEO Data
@@ -115,11 +115,25 @@ class BlogController extends Controller
         });
 
         //BreadCrumbs
-
+        $BreadCrumbs = Schema::breadcrumbList()
+            ->itemListElement([
+                Schema::ListItem()
+                    ->position(1)
+                    ->name("Blog Bachecubano")
+                    ->item(config('app.url') . "blog/"),
+                Schema::ListItem()
+                    ->position(2)
+                    ->name($blog_post->category->name)
+                    ->item(route('blog_index', ['blog_category_slug' => $blog_post->category->slug])),
+                Schema::ListItem()
+                    ->position(3)
+                    ->name($blog_post->title)
+                    ->item(post_url($blog_post))
+            ]);
 
         //SchemaOrg
 
-        return view('blog.show', compact('posts', 'blog_post', 'blog_categories'));
+        return view('blog.show', compact('posts', 'blog_post', 'blog_categories', 'BreadCrumbs'));
     }
 
     /**
@@ -176,8 +190,7 @@ class BlogController extends Controller
         ]);
 
         //Notify the admin for activation/deactivation of the post entry via email ??
-
-        //Then hit a Push notification and Social Media
+        //Yes, notify admin to approve this
 
         // redirect to show post URL
         return redirect(post_url($blog_post));

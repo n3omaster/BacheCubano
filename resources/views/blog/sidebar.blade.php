@@ -19,6 +19,10 @@
     @endif
     @endrole
 
+    @if(isset($blog_post) && Auth::id() == 1)
+    <a class="btn btn-success btn-block mb-5 mt-0" href="{{ route('blog_post_approve', ['post_id' => $blog_post->id]) }}">Aprobar/Promocionar noticia</a>
+    @endif
+
     @endauth
 
     @include('gads.v')

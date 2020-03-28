@@ -5,11 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+                    <h3 class="block-title"><a href="{{ config('app.url') }}" class="text-white">Sobre Bachecubano</a></h3>
                     <p>Web de negocios, tiendas y clasificados en Cuba. Especialidad en computadoras, celulares, accesorios, electrodomésticos, casas y carros así como sorteos y compras online.</p>
+                    <p>Potenciando desde 2014 el comercio electrónico en Cuba, innovando y conectando vendedores con compradores a través de la internet cubana.</p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
                     <div class="widget">
-                        <h3 class="block-title">Lo mejor del ecommerce en Cuba:</h3>
+                        <h3 class="block-title"><a href="{{ config('app.url') }}" class="text-white">eCommerce en Cuba</a></h3>
                         <!--
                         <ul class="media-content-list">
                             <li>

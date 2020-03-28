@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Notifications\PostFacebook;
+use App\Notifications\PostTelegram;
+use App\Notifications\PostTwitter;
 use App\Post;
+use Exception;
 use Illuminate\Http\Request;
 
 /**
@@ -21,36 +25,41 @@ class BlogController extends Controller
      */
     public function approve_post($post_id)
     {
-        //Some secured access here
-
         $blog_post = Post::findOrFail($post_id);
-        dd($blog_post);
-
-        if ($blog_post->approved == 1) {
-            return response()->json(['message' => 'El artículo ya está aprobado', 'status' => 403], 403);
-        }
 
         //Set approved
-        $blog_post->update(['approved' => 1]);
-
-        //Send to Twitter
-        //Mention @ErichGarciaCruz and @natashatenorio
-
-        //Send to Telegram
-        //With iv parameters
-        //https://t.me/share/url?url=https%3A%2F%2Ft.me%2Fiv%3Furl%3Dhttps%253A%252F%252Fwww.bachecubano.com%252Fblog%252Fnoticias-bachecubano%252Fcomenzaremos-a-pagar-y-monetizar-anuncios-seguidores%26rhash%3D0929b8713a7588
+        $blog_post->update(['enabled' => 1]);
 
 
-        //Send to Facebook
+        //Send this entry Blog Post to Telegram Instant View
+        try {
+            $blog_post->notify(new PostTelegram);
+        } catch (Exception $e) {
+            dump($e);
+        }
 
-        //Send to ...
+        //Send this Post to Twitter
+        try {
+            $blog_post->notify(new PostTwitter);
+        } catch (Exception $e) {
+            dump($e);
+        }
 
-        //Send to ...
+        //Send Push notification for the Blog entry
+        try {
+            PushController::send_notification_post($blog_post);
+        } catch (Exception $e) {
+            dump($e);
+        }
 
-        //Facebook Instant Articles
+        //Faxcebook Blog Post
+        try {
+            $blog_post->notify(new PostFacebook);
+        } catch (Exception $e) {
+            dump($e);
+        }
 
-        //Telegram Instant View
-
-        //
+        //Redirect to the current post entry
+        return redirect(post_url($blog_post));
     }
 }

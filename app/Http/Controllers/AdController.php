@@ -557,8 +557,15 @@ class AdController extends Controller
             'promotype' => 'bail|required|numeric'
         ]);
 
-        //Promotions Plans Pricing
-        $princing = [1 => 1, 2 => 5, 3 => 10, 4 => 20, 5 => 50, 6 => 100];
+        //Promotions Plans Pricing .env based
+        $princing = [
+            1 => config('pricing.pricing_price_1'),
+            2 => config('pricing.pricing_price_2'),
+            3 => config('pricing.pricing_price_3'),
+            4 => config('pricing.pricing_price_4'),
+            5 => config('pricing.pricing_price_5'),
+            6 => config('pricing.pricing_price_6')
+        ];
 
         //Get registered user
         $myself = Auth::getUser();
@@ -591,6 +598,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedTelegram);
                 } catch (Exception $e) {
+                    
                 }
             }
 
@@ -599,6 +607,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedTwitter);
                 } catch (Exception $e) {
+
                 }
             }
 
@@ -608,6 +617,7 @@ class AdController extends Controller
                 try {
                     PushController::send_notification_promoted_ad($ad);
                 } catch (Exception $e) {
+
                 }
             }
 
@@ -616,6 +626,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedFacebook);
                 } catch (Exception $e) {
+
                 }
             }
 

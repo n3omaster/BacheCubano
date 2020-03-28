@@ -35,7 +35,7 @@
                         <h3>BRONCE</h3>
                     </div>
                     <div class="pricing-header">
-                        <p class="price-value"><sup>$</sup>1<span>/ Mes</span></p>
+                        <p class="price-value"><sup>$</sup> {{ config('pricing.pricing_price_1') }}<span>/ Mes</span></p>
                     </div>
                     <ul class="description">
                         <li><strong>Primero</strong> siempre</li>
@@ -66,7 +66,7 @@
                         <h3>PLATA</h3>
                     </div>
                     <div class="pricing-header">
-                        <p class="price-value"><sup>$</sup>5<span>/ Mes</span></p>
+                        <p class="price-value"><sup>$</sup> {{ config('pricing.pricing_price_2') }}<span>/ Mes</span></p>
                     </div>
                     <ul class="description">
                         <li><strong>Primero</strong> siempre</li>
@@ -97,7 +97,7 @@
                         <h3>ORO</h3>
                     </div>
                     <div class="pricing-header">
-                        <p class="price-value"><sup>$</sup>10<span>/ Mes</span></p>
+                        <p class="price-value"><sup>$</sup> {{ config('pricing.pricing_price_3') }}<span>/ Mes</span></p>
                     </div>
                     <ul class="description">
                         <li><strong>Primero</strong> siempre</li>
@@ -126,7 +126,7 @@
                         <h3>DIAMANTE</h3>
                     </div>
                     <div class="pricing-header">
-                        <p class="price-value"><sup>$</sup>20<span>/ Mes</span></p>
+                        <p class="price-value"><sup>$</sup> {{ config('pricing.pricing_price_4') }}<span>/ Mes</span></p>
                     </div>
                     <ul class="description">
                         <li><strong>Primero</strong> siempre</li>
@@ -153,7 +153,7 @@
                         <h3>YOUTUBE</h3>
                     </div>
                     <div class="pricing-header">
-                        <p class="price-value"><sup>$</sup>50<span>/ Pago único</span></p>
+                        <p class="price-value"><sup>$</sup> {{ config('pricing.pricing_price_5') }}<span>/ Pago único</span></p>
                     </div>
                     <ul class="description">
                         <li><strong>Primero</strong> siempre * 1 mes</li>
@@ -180,7 +180,7 @@
                         <h3>PARTNER</h3>
                     </div>
                     <div class="pricing-header">
-                        <p class="price-value"><sup>$</sup>100<span>/ Pago único</span></p>
+                        <p class="price-value"><sup>$</sup> {{ config('pricing.pricing_price_6') }}<span>/ Pago único</span></p>
                     </div>
                     <ul class="description">
                         <li><strong>Primero</strong> siempre * 1 mes</li>

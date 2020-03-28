@@ -36,6 +36,32 @@ class PushController extends Controller
     }
 
     /**
+     * Push Notification for a Blog entry Post
+     */
+    public function send_notification_post($blog_post)
+    {
+        $data = [
+            'name' => 'BlogPost-' . $blog_post->id,
+            'title' => Str::limit($blog_post->title, 69),
+            'url' => ad_url(post_url($blog_post)),
+            'icon' => '',
+            'message' => Str::limit(strip_tags($blog_post->body), 96) . " ...",
+        ];
+
+        $headers = [
+            config('push.push_domain_header') => config('push.push_domain'),
+            config('push.push_token_header') => config('push.push_token'),
+        ];
+        $client = new \GuzzleHttp\Client(['headers' => $headers]);
+
+        $response = $client->request('POST', config('push.push_server'), ['form_params' => $data]);
+
+        $rsp = $response->getBody()->getContents();
+
+        return $rsp;
+    }
+
+    /**
      * Test method, now without any route
      */
     public static function send_notification($campaign_name, $title, $url, $message, $icon = '')

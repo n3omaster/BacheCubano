@@ -2,7 +2,9 @@
 
     - User links
     - Blog Beta
-    - Dynamic Ads Pricing Promotion
+    - Dynamic Ads Pricing Promotion .env based
+    - Blog Post auto share to Twitter, Facebook, Push and Telegram networks
+    - Blog BreadCrumbs
 
 ### v1.9.1
 
