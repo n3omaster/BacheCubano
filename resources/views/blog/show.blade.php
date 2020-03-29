@@ -48,7 +48,8 @@
                         <div class="meta">
                             <span class="meta-part"><i class="lni-user"></i> <span class="tg-author">{{ $blog_post->owner->name }}</span></span>
                             <span class="tg-created d-none">{{ $blog_post->created_at->timestamp }}</span>
-                            <span class="meta-part"><i class="lni-alarm-clock"></i> {{ $blog_post->created_at->format('d/m/Y') }}</span>
+                            <span class="meta-part"><i class="lni-pencil"></i> {{ $blog_post->created_at->format('d/m/Y') }}</span>
+                            <span class="meta-part"><a href="#"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</a></span>
                             <span class="meta-part"><a href="{{ route('blog_index', ['blog_category_slug' => $blog_post->category->slug]) }}"><i class="lni-folder"></i> <span class="tg-category">{{ $blog_post->category->name }}</span></a></span>
                         </div>
                         <div class="entry-summary">

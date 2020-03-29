@@ -5,6 +5,8 @@
     - Dynamic Ads Pricing Promotion .env based
     - Blog Post auto share to Twitter, Facebook, Push and Telegram networks
     - Blog BreadCrumbs
+    - Blog Time to read calc
+    - 
 
 ### v1.9.1
 

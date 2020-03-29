@@ -56,7 +56,8 @@
                         <h2 class="post-title"><a href="{{ post_url($blog_post) }}">{{ $blog_post->title }}</a></h2>
                         <div class="meta">
                             <span class="meta-part"><a href="#"><i class="lni-user"></i> {{ $blog_post->owner->name }}</a></span>
-                            <span class="meta-part"><a href="#"><i class="lni-alarm-clock"></i> {{ $blog_post->updated_at->format('d/m/Y') }}</a></span>
+                            <span class="meta-part"><a href="#"><i class="lni-pencil"></i> {{ $blog_post->updated_at->format('d/m/Y') }}</a></span>
+                            <span class="meta-part"><a href="#"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</a></span>
                             {{-- <span class="meta-part"><a href="#"><i class="lni-comments-alt"></i> Comentarios</a></span> --}}
                         </div>
                         <div class="entry-summary">
