@@ -2617,9 +2617,9 @@
             "authors": [
                 {
                     "name": "Ben Corlett",
-                    "role": "Developer",
                     "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au"
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
                 }
             ],
             "description": "OAuth 1.0 Client Library",
@@ -3081,16 +3081,16 @@
         },
         {
             "name": "overtrue/laravel-like",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/laravel-like.git",
-                "reference": "4ae55dcd4aac6bd03174647c6f1b41d8439e5c3d"
+                "reference": "d27293937f70209280afc23de337f4a033194e2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/laravel-like/zipball/4ae55dcd4aac6bd03174647c6f1b41d8439e5c3d",
-                "reference": "4ae55dcd4aac6bd03174647c6f1b41d8439e5c3d",
+                "url": "https://api.github.com/repos/overtrue/laravel-like/zipball/d27293937f70209280afc23de337f4a033194e2b",
+                "reference": "d27293937f70209280afc23de337f4a033194e2b",
                 "shasum": ""
             },
             "require": {
@@ -3099,7 +3099,7 @@
             "require-dev": {
                 "laravel/framework": "^6.0|^7.0",
                 "mockery/mockery": "^1.2",
-                "orchestra/testbench": "^4.0",
+                "orchestra/testbench": "^5.0",
                 "phpunit/phpunit": "~9"
             },
             "type": "library",
@@ -3126,7 +3126,7 @@
                 }
             ],
             "description": "👍 User-like features for Laravel Application.",
-            "time": "2020-03-04T10:19:16+00:00"
+            "time": "2020-03-30T09:37:46+00:00"
         },
         {
             "name": "paragonie/random_compat",
