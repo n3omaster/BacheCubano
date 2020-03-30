@@ -19,7 +19,7 @@ class PushController extends Controller
             'title' => Str::limit($ad->description->title, 69),
             'url' => ad_url($ad),
             'icon' => '',
-            'message' => Str::limit($ad->description->description, 96) . " ...",
+            'message' => Str::limit(strip_tags($ad->description->description), 96) . " ...",
         ];
 
         $headers = [
