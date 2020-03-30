@@ -100,10 +100,10 @@ class BlogController extends Controller
             'desc' => text_clean(Str::limit($blog_post->body, 160)),
         ];
         SEOMeta::setTitle($seo_data['title']);
-        SEOMeta::setDescription($seo_data['desc']);
+        SEOMeta::setDescription(strip_tags($seo_data['desc']));
         Twitter::setTitle($seo_data['title']);
         OpenGraph::setTitle($seo_data['title']);
-        OpenGraph::setDescription($seo_data['desc']);
+        OpenGraph::setDescription(strip_tags$seo_data['desc']));
         OpenGraph::addProperty('type', 'website');
         OpenGraph::addImage(config('app.img_url') . "blog/" . $blog_post->cover);
 

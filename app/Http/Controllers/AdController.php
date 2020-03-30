@@ -135,10 +135,10 @@ class AdController extends Controller
             'desc' => "Promociona tu producto, negocio o servicio en Bachecubano totalmente gratis",
         ];
         SEOMeta::setTitle($seo_data['title']);
-        SEOMeta::setDescription($seo_data['desc']);
+        SEOMeta::setDescription(strip_tags($seo_data['desc']));
         Twitter::setTitle($seo_data['title']);
         OpenGraph::setTitle($seo_data['title']);
-        OpenGraph::setDescription($seo_data['desc']);
+        OpenGraph::setDescription(strip_tags($seo_data['desc']));
         OpenGraph::addProperty('type', 'website');
         OpenGraph::addImage(asset("android-chrome-512x512.png"));
 
