@@ -117,6 +117,9 @@
         },
         menubar: 'file edit view insert format tools table favs help',
         toolbar_mode: 'floating',
+        relative_urls: false,
+        remove_script_host: false,
+        convert_urls: true,
     });
 </script>
 
