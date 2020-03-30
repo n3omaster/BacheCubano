@@ -304,12 +304,11 @@ class AdController extends Controller
             'desc' => text_clean(Str::limit($ad->description->description, 160)),
         ];
         SEOMeta::setTitle($seo_data['title']);
-        SEOMeta::setDescription($seo_data['desc']);
+        SEOMeta::setDescription(strip_tags($seo_data['desc']));
         Twitter::setTitle($seo_data['title']);
         OpenGraph::setTitle($seo_data['title']);
-        OpenGraph::setDescription($seo_data['desc']);
+        OpenGraph::setDescription(strip_tags($seo_data['desc']));
         OpenGraph::addProperty('type', 'website');
-        OpenGraph::addImage(ad_first_image($ad));
 
         //Search Bar
         $search_bar = true;
@@ -317,7 +316,7 @@ class AdController extends Controller
         //Iterate every image for OpenGrap and Owl Carousell
         if (count($ad->resources) >= 1) {
             foreach ($ad->resources as $resource) {
-                OpenGraph::addImage(ad_image_url($resource));
+                OpenGraph::addImage(ad_image_url($resource, 'original'));
             }
         } else {
             OpenGraph::addImage(ad_first_image($ad));

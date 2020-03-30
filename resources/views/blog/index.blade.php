@@ -50,15 +50,19 @@
 
                     <!-- Post Content -->
                     <div class="post-content">
+
                         <ul class="list-inline cat-meta">
                             <li class="tr-cats"><a href="{{ route('blog_index', ['blog_category_slug' => $blog_post->category->slug]) }}"> {{ $blog_post->category->name }}</a></li>
                         </ul>
+
                         <h2 class="post-title"><a href="{{ post_url($blog_post) }}">{{ $blog_post->title }}</a></h2>
+                        
                         <div class="meta">
-                            <span class="meta-part"><a href="#"><i class="lni-user"></i> {{ $blog_post->owner->name }}</a></span>
-                            <span class="meta-part"><a href="#"><i class="lni-pencil"></i> {{ $blog_post->updated_at->format('d/m/Y') }}</a></span>
-                            <span class="meta-part"><a href="#"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</a></span>
-                            {{-- <span class="meta-part"><a href="#"><i class="lni-comments-alt"></i> Comentarios</a></span> --}}
+                            <span class="meta-part"><a href="{{ $blog_post->owner->social_twitter }}"><i class="lni-user"></i> {{ $blog_post->owner->name }}</a></span>
+                            <span class="meta-part text-secondary"><i class="lni-pencil"></i> {{ $blog_post->updated_at->format('d/m/Y') }}</span>
+                            <span class="meta-part text-secondary"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</span>
+                            <span class="meta-part text-secondary"><i class="lni-eye"></i> {{ $blog_post->hits }}</span>
+                            <span class="meta-part"><a href="{{ post_url($blog_post) }}#disqus_thread"><i class="lni-comments-alt"></i> Comentarios</a></span>
                         </div>
                         <div class="entry-summary">
                             {!! Str::words($blog_post->body, 100) !!}
@@ -71,6 +75,50 @@
 
                 @endforeach
                 @endif
+
+
+                {{--
+                <!-- Start Post -->
+                <div class="blog-post video-post">
+                    <!-- Post thumb -->
+                    <div class="post-thumb">
+                        <div class="video-wrapper">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/qighCE8WfBk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <!-- End Post post-thumb -->
+
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        <ul class="list-inline cat-meta">
+                            <li class="tr-cats"><a href="#">Video</a></li>
+                        </ul>
+                        <h2 class="post-title"><a href="single-post.html">Exercitation Photo Booth</a></h2>
+                        <div class="meta">
+                            <span class="meta-part"><a href="#"><i class="lni-user"></i> Clasihub</a></span>
+                            <span class="meta-part"><a href="#"><i class="lni-alarm-clock"></i> June 21, 2018</a></span>
+                            <span class="meta-part"><a href="#"><i class="lni-folder"></i> Sticky</a></span>
+                            <span class="meta-part"><a href="#"><i class="lni-comments-alt"></i> 1 Comments</a></span>
+                        </div>
+                    </div>
+                    <!-- Post Content -->
+                </div>
+                <!-- End Post -->
+                --}}
+
+                <!-- Start Post -->
+                <div class="blog-post quote-post">
+                    <div class="quote-wrap">
+                        <i class="fa fa-quote-left"></i>
+                        <blockquote class="text-center">
+                            ¿Quieres escribir para nuestro Blog?
+                            <br>
+                            Queremos escucharte, <a href="{{ route('blog_index') }}">aplica aquí</a>
+                        </blockquote>
+                        <i class="fa fa-quote-right"></i>
+                    </div>
+                </div>
+                <!-- End Post -->
 
                 @include('gads.h')
 

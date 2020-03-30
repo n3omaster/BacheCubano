@@ -45,16 +45,24 @@
 
                     <!-- Post Content -->
                     <div class="post-content pb-2">
+                        <ul class="list-inline cat-meta">
+                            <li class="tr-cats">
+                                <span class="meta-part"><a href="{{ route('blog_index', ['blog_category_slug' => $blog_post->category->slug]) }}"><i class="lni-folder"></i> <span class="tg-category">{{ $blog_post->category->name }}</span></a></span>
+                            </li>
+                        </ul>
                         <div class="meta">
-                            <span class="meta-part"><i class="lni-user"></i> <span class="tg-author">{{ $blog_post->owner->name }}</span></span>
+                            <span class="meta-part"><a href="{{ $blog_post->owner->social_twitter }}"><i class="lni-user"></i> <span class="tg-author">{{ $blog_post->owner->name }}</span></a></span>
                             <span class="tg-created d-none">{{ $blog_post->created_at->timestamp }}</span>
-                            <span class="meta-part"><i class="lni-pencil"></i> {{ $blog_post->created_at->format('d/m/Y') }}</span>
-                            <span class="meta-part"><a href="#"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</a></span>
-                            <span class="meta-part"><a href="{{ route('blog_index', ['blog_category_slug' => $blog_post->category->slug]) }}"><i class="lni-folder"></i> <span class="tg-category">{{ $blog_post->category->name }}</span></a></span>
+                            <span class="meta-part text-secondary"><i class="lni-pencil"></i> {{ $blog_post->created_at->format('d/m/Y') }}</span>
+                            <span class="meta-part text-secondary"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</span>
+                            <span class="meta-part text-secondary"><i class="lni-eye"></i> {{ $blog_post->hits }}</span>
+                            <span class="meta-part"><a href="{{ post_url($blog_post) }}#disqus_thread"><i class="lni-comments-alt"></i> Comentarios</a></span>
                         </div>
+
                         <div class="entry-summary">
                             {!! nl2br($blog_post->body) !!}
                         </div>
+
                         <div class="share-items">
                             <ul class="list-inline">
                                 <li>Compartir: </li>
@@ -64,6 +72,7 @@
                                 <li class="te-share"><a href="{{ 'https://telegram.me/share/url?url=https://t.me/iv?url=' . urlencode(URL::current() . '&rhash=0929b8713a7588') }}" target="_blank"><i class="lni-telegram"></i></a></li>
                             </ul>
                         </div>
+
                     </div>
                     <!-- Post Content -->
                 </div>
@@ -72,7 +81,6 @@
                 <!-- Author Bio -->
                 @include('blog.author-bio')
                 <!-- End Author Bio -->
-
 
                 <div id="disqus_thread"></div>
 
