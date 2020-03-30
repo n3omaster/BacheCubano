@@ -600,7 +600,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedTelegram);
                 } catch (Exception $e) {
-                    $this->reportException($e);
+                    
                 }
             }
 
@@ -609,7 +609,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedTwitter);
                 } catch (Exception $e) {
-                    $this->reportException($e);
+                    
                 }
             }
 
@@ -619,7 +619,7 @@ class AdController extends Controller
                 try {
                     PushController::send_notification_promoted_ad($ad);
                 } catch (Exception $e) {
-                    $this->reportException($e);
+                    
                 }
             }
 
@@ -628,7 +628,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedFacebook);
                 } catch (Exception $e) {
-                    $this->reportException($e);
+                    
                 }
             }
 

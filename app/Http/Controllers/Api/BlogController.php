@@ -35,28 +35,28 @@ class BlogController extends Controller
         try {
             $blog_post->notify(new PostTelegram);
         } catch (Exception $e) {
-            $this->reportException($e);
+            
         }
 
         //Send this Post to Twitter
         try {
             $blog_post->notify(new PostTwitter);
         } catch (Exception $e) {
-            $this->reportException($e);
+            
         }
 
         //Send Push notification for the Blog entry
         try {
             PushController::send_notification_post($blog_post);
         } catch (Exception $e) {
-            $this->reportException($e);
+            
         }
 
         //Faxcebook Blog Post
         try {
             $blog_post->notify(new PostFacebook);
         } catch (Exception $e) {
-            $this->reportException($e);
+            
         }
 
         //Redirect to the current post entry
