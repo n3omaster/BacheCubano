@@ -97,7 +97,7 @@ class BlogController extends Controller
         //SEO Data
         $seo_data = [
             'title' => $blog_post->title,
-            'desc' => text_clean(Str::limit($blog_post->body, 160)),
+            'desc' => text_clean(Str::limit(strip_tags($blog_post->body), 160)),
         ];
         SEOMeta::setTitle($seo_data['title']);
         SEOMeta::setDescription(strip_tags($seo_data['desc']));

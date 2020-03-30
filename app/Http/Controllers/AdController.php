@@ -301,7 +301,7 @@ class AdController extends Controller
         //SEO Data
         $seo_data = [
             'title' => text_clean(Str::limit($ad->description->title, 60)),
-            'desc' => text_clean(Str::limit($ad->description->description, 160)),
+            'desc' => text_clean(Str::limit(strip_tags($ad->description->description), 160)),
         ];
         SEOMeta::setTitle($seo_data['title']);
         SEOMeta::setDescription(strip_tags($seo_data['desc']));
