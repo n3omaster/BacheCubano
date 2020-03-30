@@ -2,7 +2,7 @@
 <footer>
     <!-- Footer Area Start -->
     <section class="footer-Content">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
                     <h3 class="block-title"><a href="{{ config('app.url') }}" class="text-white">Sobre Bachecubano</a></h3>
@@ -62,6 +62,7 @@
                             <li><a class="instagram" href="https://www.instagram.com/Bachecubano" rel="nofollow"><i class="lni-instagram"></i></a></li>
                             <li><a class="twitter" href="https://www.twitter.com/Bachecubano" rel="nofollow"><i class="lni-twitter"></i></a></li>
                             <li><a class="linkedin" href="https://www.linkedin.com/company/bachecubano"><i class="lni-linkedin"></i></a></li>
+                            <li><a class="pinterest" href="https://www.pinterest.com//bachecubano"><i class="lni-pinterest"></i></a></li>
                             <li><a class="telegram" href="https://t.me/elBacheChannel"><i class="lni-telegram"></i></a></li>
                         </ul>
                     </div>
@@ -73,7 +74,7 @@
 
     <!-- Copyright Start  -->
     <div id="copyright">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="site-info float-left">

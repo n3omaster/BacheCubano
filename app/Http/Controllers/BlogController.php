@@ -105,6 +105,7 @@ class BlogController extends Controller
         OpenGraph::setTitle($seo_data['title']);
         OpenGraph::setDescription($seo_data['desc']);
         OpenGraph::addProperty('type', 'website');
+        OpenGraph::addImage(config('app.img_url') . "blog/" . $blog_post->cover);
 
         //Latest 5 post
         $posts = Post::latest()->take(5)->get();

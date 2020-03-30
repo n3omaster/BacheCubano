@@ -140,6 +140,8 @@ class AdController extends Controller
         OpenGraph::setTitle($seo_data['title']);
         OpenGraph::setDescription($seo_data['desc']);
         OpenGraph::addProperty('type', 'website');
+        OpenGraph::addImage(asset("android-chrome-512x512.png"));
+
 
         //Get All Ad Locations of the system
         $locations = Cache::rememberForever('ad-locations', function () {
@@ -307,6 +309,7 @@ class AdController extends Controller
         OpenGraph::setTitle($seo_data['title']);
         OpenGraph::setDescription($seo_data['desc']);
         OpenGraph::addProperty('type', 'website');
+        OpenGraph::addImage(ad_first_image($ad));
 
         //Search Bar
         $search_bar = true;
@@ -598,7 +601,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedTelegram);
                 } catch (Exception $e) {
-                    
+                    $this->reportException($e);
                 }
             }
 
@@ -607,7 +610,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedTwitter);
                 } catch (Exception $e) {
-
+                    $this->reportException($e);
                 }
             }
 
@@ -617,7 +620,7 @@ class AdController extends Controller
                 try {
                     PushController::send_notification_promoted_ad($ad);
                 } catch (Exception $e) {
-
+                    $this->reportException($e);
                 }
             }
 
@@ -626,7 +629,7 @@ class AdController extends Controller
                 try {
                     $ad->notify(new AdPromotedFacebook);
                 } catch (Exception $e) {
-
+                    $this->reportException($e);
                 }
             }
 
