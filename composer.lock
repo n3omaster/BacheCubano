@@ -2053,16 +2053,16 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v8.4.2",
+            "version": "v8.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "0420dc294ce2fbf92bb3a2d18505053f552b70b1"
+                "reference": "edb9ccb9993ca98c7347da2fae20e1b8b4895f31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/0420dc294ce2fbf92bb3a2d18505053f552b70b1",
-                "reference": "0420dc294ce2fbf92bb3a2d18505053f552b70b1",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/edb9ccb9993ca98c7347da2fae20e1b8b4895f31",
+                "reference": "edb9ccb9993ca98c7347da2fae20e1b8b4895f31",
                 "shasum": ""
             },
             "require": {
@@ -2122,7 +2122,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2020-03-24T16:31:27+00:00"
+            "time": "2020-03-31T15:48:43+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -2617,9 +2617,9 @@
             "authors": [
                 {
                     "name": "Ben Corlett",
-                    "role": "Developer",
                     "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au"
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
                 }
             ],
             "description": "OAuth 1.0 Client Library",
@@ -5158,16 +5158,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.4.6",
+            "version": "v4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "0a3b7711229f816a06fac805f4ed4a8f4641c719"
+                "reference": "62f92509c9abfd1f73e17b8cf1b72c0bdac6611b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/0a3b7711229f816a06fac805f4ed4a8f4641c719",
-                "reference": "0a3b7711229f816a06fac805f4ed4a8f4641c719",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/62f92509c9abfd1f73e17b8cf1b72c0bdac6611b",
+                "reference": "62f92509c9abfd1f73e17b8cf1b72c0bdac6611b",
                 "shasum": ""
             },
             "require": {
@@ -5209,7 +5209,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2020-03-23T12:37:11+00:00"
+            "time": "2020-03-30T14:07:33+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -5303,16 +5303,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v5.0.6",
+            "version": "v5.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "e9927cabc1519d2498d02b743f2cab6e4722ad3d"
+                "reference": "481b7d6da88922fb1e0d86a943987722b08f3955"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/e9927cabc1519d2498d02b743f2cab6e4722ad3d",
-                "reference": "e9927cabc1519d2498d02b743f2cab6e4722ad3d",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/481b7d6da88922fb1e0d86a943987722b08f3955",
+                "reference": "481b7d6da88922fb1e0d86a943987722b08f3955",
                 "shasum": ""
             },
             "require": {
@@ -5361,7 +5361,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2020-03-16T12:10:54+00:00"
+            "time": "2020-03-27T16:56:45+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
