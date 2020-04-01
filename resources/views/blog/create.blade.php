@@ -103,7 +103,7 @@
         plugins: [
             'advlist autolink link image imagetools lists charmap print preview hr anchor pagebreak spellchecker',
             'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-            'table emoticons template paste help'
+            'table emoticons template paste responsivefilemanager help'
         ],
         a11y_advanced_options: true,
         image_caption: true,
@@ -120,6 +120,11 @@
         relative_urls: false,
         remove_script_host: false,
         convert_urls: true,
+        external_filemanager_path: "/filemanager/",
+        filemanager_title: "Responsive Filemanager",
+        external_plugins: {
+            "filemanager": "/filemanager/plugin.min.js"
+        }
     });
 </script>
 
