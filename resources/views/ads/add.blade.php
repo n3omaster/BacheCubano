@@ -129,12 +129,9 @@
 
                                 <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="8" style="resize: vertical">@if($edit){!! nl2br($ad->description->description) !!}@else{!! old('description') !!}@endif</textarea>
 
-                                <!--
-                                    <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="8" style="resize: vertical">@if($edit){!! $ad->description->description !!}@else{!! old('description') !!}@endif</textarea>
-                                -->
                             </div>
 
-                            <!-- Image grid for Ajax deletion -->
+                            {{-- Image grid for Ajax deletion --}}
                             @if($edit && isset($ad->resources) && $ad->resources->count() >= 1)
                             <div class="form-group mb-3 p-3">
                                 @foreach($ad->resources as $resource)
@@ -149,7 +146,7 @@
                             </div>
                             @endif
 
-                            <!-- Images Uppy -->
+                            {{-- Images Uppy --}}
                             <div class="DashboardContainer"></div>
 
                         </div>
