@@ -43,7 +43,7 @@ class PushController extends Controller
         $data = [
             'name' => 'BlogPost-' . $blog_post->id,
             'title' => Str::limit($blog_post->title, 69),
-            'url' => ad_url(post_url($blog_post)),
+            'url' => post_url($blog_post),
             'icon' => '',
             'message' => Str::limit(strip_tags($blog_post->body), 96) . " ...",
         ];

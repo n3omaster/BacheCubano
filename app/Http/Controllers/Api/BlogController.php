@@ -8,7 +8,6 @@ use App\Notifications\PostTelegram;
 use App\Notifications\PostTwitter;
 use App\Post;
 use Exception;
-use Illuminate\Http\Request;
 
 /**
  * Some Blog moderation here
