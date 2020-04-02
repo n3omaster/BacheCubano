@@ -328,6 +328,19 @@ class WelcomeController extends Controller
 
     public function puedosalir()
     {
+        //SEO Data
+        $seo_data = [
+            'title' => '¿Puedo salir de casa ante el COVID19?',
+            'desc' => 'Te predecimos si es seguro o no la salida a la calle en Cuba ante esta pandemia.',
+        ];
+        SEOMeta::setTitle($seo_data['title']);
+        SEOMeta::setDescription($seo_data['desc']);
+        OpenGraph::setTitle($seo_data['title']);
+        OpenGraph::setDescription($seo_data['desc']);
+        OpenGraph::addImage(asset('android-chrome-512x512.png'));
+        OpenGraph::addProperty('type', 'website');
+        Twitter::setTitle($seo_data['title']);
+
         return view('puedosalir');
     }
 }
