@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\PostCategory;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -15,7 +14,6 @@ use Twitter;
 
 use Illuminate\Support\Facades\Cache;
 use Spatie\SchemaOrg\Schema;
-use stdClass;
 
 class BlogController extends Controller
 {
@@ -105,7 +103,7 @@ class BlogController extends Controller
         OpenGraph::setTitle($seo_data['title']);
         OpenGraph::setDescription(strip_tags($seo_data['desc']));
         OpenGraph::addProperty('type', 'website');
-        OpenGraph::addImage(config('app.img_url') . "blog/" . $blog_post->cover);
+        OpenGraph::addImage(config('app.img_url') . "blog/" . $blog_post->cover, ['height' => 480, 'width' => 768]);
 
         //Latest 5 post
         $posts = Post::latest()->take(5)->get();

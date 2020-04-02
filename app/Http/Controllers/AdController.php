@@ -316,10 +316,10 @@ class AdController extends Controller
         //Iterate every image for OpenGrap and Owl Carousell
         if (count($ad->resources) >= 1) {
             foreach ($ad->resources as $resource) {
-                OpenGraph::addImage(ad_image_url($resource, 'original'));
+                OpenGraph::addImage(ad_image_url($resource, 'original'), ['height' => 480, 'width' => 768]);
             }
         } else {
-            OpenGraph::addImage(ad_first_image($ad));
+            OpenGraph::addImage(ad_first_image($ad), ['height' => 480, 'width' => 768]);
         }
 
         //Retrieve from Cache, Not neccesary to retrieve again
