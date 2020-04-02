@@ -25,7 +25,7 @@
     Para eso tienes los videos de Bachecubano!!! 🤣
 </h2>
 
-<div class="text-center">
+<div class="text-center mt-4">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0bPNnSugPzbD6z3WtBOrSnf6BSYWZ9Mv" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
