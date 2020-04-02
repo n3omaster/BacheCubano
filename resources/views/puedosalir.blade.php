@@ -2,6 +2,6 @@
 
 @section('content')
 
-<h1 style="font-size: 300px" class="text-center">NO!</h1>
+<h1 style="font-size: 300px; padding: 300px;" class="text-center">NO!</h1>
 
 @endsection
