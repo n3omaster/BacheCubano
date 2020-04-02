@@ -61,7 +61,7 @@ Route::group(['domain' => 'api.' . config('app.domain')], function () {
         //Approve a Blog Post
         Route::group(['prefix' => 'blog'], function () {
             //Blog Approve Post and Viralice
-            Route::get('approve/{post_id}', 'Api\BlogController@approve_post')->name('blog_post_approve')->where('post_id', '[0-9]+');
+            Route::get('approve/{post_id}/{telegram?}/{twitter?}/{push?}/{facebook?}', 'Api\BlogController@approve_post')->name('blog_post_approve')->where('post_id', '[0-9]+');
         });
 
         //Passport Routes for login/signup/logout/getUser

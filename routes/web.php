@@ -23,6 +23,12 @@ Route::domain('{province_slug}.' . config('app.domain'))->group(function () {
     Route::get('/', 'WelcomeController@index')->name('welcome')->middleware('cache.headers:private,max-age=300;etag');
 });
 
+//Provinces as subdomain
+Route::domain('puedosalir.' . config('app.domain'))->group(function () {
+    //Welcome Route
+    Route::get('/', 'WelcomeController@puedosalir')->name('puedosalir')->middleware('cache.headers:private,max-age=300;etag');
+});
+
 //Static Pages: [Contact, Terms, FAQ]
 Route::group(['prefix' => 'contact'], function () {
     Route::get('/', 'WelcomeController@contact')->name('contact');

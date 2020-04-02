@@ -325,4 +325,9 @@ class WelcomeController extends Controller
         // print the css content
         echo $js_content;
     }
+
+    public function puedosalir()
+    {
+        return view('puedosalir');
+    }
 }
