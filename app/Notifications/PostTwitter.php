@@ -45,7 +45,7 @@ class PostTwitter extends Notification
      */
     public function toTwitter($blog_post)
     {
-        return (new TwitterStatusUpdate(Str::limit($blog_post->title, 60) . "\n\n #Bachecubano #Cuba \n\n " . (twitter_username($blog_post->owner->social_twitter) != "") ? "@" . twitter_username($blog_post->owner->social_twitter) : "" . " @ErichGarciaCruz\n\n" . post_url($blog_post)));
+        return (new TwitterStatusUpdate(Str::limit($blog_post->title, 60) . "\n\n #Bachecubano #Cuba \n\n " . "@" . twitter_username($blog_post->owner->social_twitter) . " @ErichGarciaCruz\n\n" . post_url($blog_post)));
     }
 
     /**
