@@ -30,12 +30,12 @@ class PopularAd extends Mailable
         $this->receiver = $ad->owner;
         $this->amount = $amount;
 
-        $this->title = 'Te acabas de ganar ' . $this->amount . 'cuc en Bachecubano.com';
+        $this->title = 'Te acabas de ganar $' . $this->amount . 'cuc en Bachecubano.com';
         $this->email_header = "Se ha recargado su cuenta correctamente";
         $this->email_title = 'Tienes anuncios populares, por eso te premiamos con ' . $this->amount . 'cuc en Bachecubano.com';
         $this->email_subtitle = "Ya posees saldo para realizar promociones y enviar SMS a 🇨🇺";
         $this->body_text_title = "Se ha recargado su cuenta";
-        $this->body_text_content = "Tienes anuncios populares, por eso te premiamos con " . $amount . "cuc en tu cuenta de Bachecubano.<br>Mira tu anuncio y compártelo en tus redes sociales!<br><br><a href='" . ad_url($ad) . "'>" . ad_url($ad) . "</a><br><br>Ya puedes empezar a promocionar anuncios.";
+        $this->body_text_content = "Tienes anuncios populares, por eso te premiamos con $" . $amount . "cuc en tu cuenta de Bachecubano.<br>Mira tu anuncio y compártelo en tus redes sociales!<br><br><a href='" . ad_url($ad) . "'>" . ad_url($ad) . "</a><br><br>Ya puedes empezar a promocionar anuncios.";
     }
 
     /**
@@ -47,7 +47,7 @@ class PopularAd extends Mailable
     {
         return $this->from('contact@bachecubano.com')
             ->cc('ecruz@bachecubano.com')
-            ->subject('Te acabas de ganar ' . $this->amount . ' en Bachecubano.com')
+            ->subject('Te acabas de ganar $' . $this->amount . ' en Bachecubano.com')
             ->view('emails.transfer');
     }
 }
