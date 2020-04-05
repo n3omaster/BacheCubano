@@ -49,10 +49,9 @@ class PostTelegram extends Notification
      */
     public function toTelegram($blog_post)
     {
-
         $telegram_notif = TelegramMessage::create();
         $telegram_notif->to('@elBacheChannel');
-        $telegram_notif->content("https://t.me/iv?url=" . urlencode(post_url($blog_post)) . "&rhash=0929b8713a7588");
+        $telegram_notif->content("https://t.me/iv?url=" . post_url($blog_post) . "&rhash=0929b8713a7588");
 
         return $telegram_notif;
     }
