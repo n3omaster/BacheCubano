@@ -20,7 +20,7 @@
 <ol class="breadcrumb">
     <li><a href="{{ config('app.url') }}">Inicio</a></li>
     <li class="ml-2">/</li>
-    <li class="ml-2"><a href="{{ route('blog_index') }}">Blog de Noticias Comercio y Compra venta en Cuba</a></li>
+    <li class="ml-2"><a href="{{ route('blog_index') }}">Blog</a></li>
     <li class="ml-2">/</li>
     <li class="ml-2"><a href="{{ route('blog_index', ['blog_category_slug' => $blog_post->category->slug]) }}">{{ $blog_post->category->name }}</a></li>
     <li class="ml-2">/</li>

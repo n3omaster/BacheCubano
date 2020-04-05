@@ -21,7 +21,7 @@
 <ol class="breadcrumb">
     <li><a href="{{ config('app.url') }}">Inicio</a></li>
     <li class="ml-2">/</li>
-    <li class="ml-2"><a href="{{ route('blog_index') }}">{{ $seo_data['title'] }}</a></li>
+    <li class="ml-2"><a href="{{ route('blog_index') }}">Blog</a></li>
     @if(isset($category->name))
     <li class="ml-2">/</li>
     <li class="current ml-2">{{ $category->name }}</li>
@@ -56,7 +56,7 @@
                         </ul>
 
                         <h2 class="post-title"><a href="{{ post_url($blog_post) }}">{{ $blog_post->title }}</a></h2>
-                        
+
                         <div class="meta">
                             <span class="meta-part"><a href="{{ $blog_post->owner->social_twitter }}"><i class="lni-user"></i> {{ $blog_post->owner->name }}</a></span>
                             <span class="meta-part text-secondary"><i class="lni-pencil"></i> {{ $blog_post->updated_at->format('d/m/Y') }}</span>
