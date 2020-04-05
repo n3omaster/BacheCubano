@@ -51,6 +51,7 @@ class BlogController extends Controller
         //Send Push notification for the Blog entry
         if ($push == "1") {
             try {
+                //ANORMAAAAAAAAAAAALLLLLLLLLLLLL
                 PushController::send_notification_post($blog_post);
             } catch (Exception $e) {
                 Log::error(json_encode($e));
