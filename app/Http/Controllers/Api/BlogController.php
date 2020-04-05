@@ -23,7 +23,7 @@ class BlogController extends Controller
     /**
      * Blog Post approve and viralice
      */
-    public function approve_post($post_id, $telegram = true, $twitter = true, $push = true, $facebook = true)
+    public function approve_post($post_id)
     {
         $blog_post = Post::findOrFail($post_id);
 

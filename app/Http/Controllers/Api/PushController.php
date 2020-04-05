@@ -38,7 +38,7 @@ class PushController extends Controller
     /**
      * Push Notification for a Blog entry Post
      */
-    public function send_notification_post($blog_post)
+    public static function send_notification_post($blog_post)
     {
         $data = [
             'name' => 'BlogPost-' . $blog_post->id,
