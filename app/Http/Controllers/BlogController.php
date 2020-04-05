@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use SEOMeta;
 use OpenGraph;
 use Twitter;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 use Illuminate\Support\Facades\Cache;
 use Spatie\SchemaOrg\Schema;
@@ -100,6 +101,7 @@ class BlogController extends Controller
         SEOMeta::setTitle($seo_data['title']);
         SEOMeta::setDescription(strip_tags($seo_data['desc']));
         Twitter::setTitle($seo_data['title']);
+        TwitterCard::setType('summary_large_image');
         Twitter::addValue('creator', "@" . twitter_username($blog_post->owner->social_twitter));
         OpenGraph::setTitle($seo_data['title']);
         OpenGraph::setDescription(strip_tags($seo_data['desc']));

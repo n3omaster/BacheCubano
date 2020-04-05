@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\URL;
 use SEOMeta;
 use OpenGraph;
 use Twitter;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 use App\AdDescription;
 use App\AdStats;
@@ -306,6 +307,7 @@ class AdController extends Controller
         SEOMeta::setTitle($seo_data['title']);
         SEOMeta::setDescription(strip_tags($seo_data['desc']));
         Twitter::setTitle($seo_data['title']);
+        TwitterCard::setType('summary_large_image');
         OpenGraph::setTitle($seo_data['title']);
         OpenGraph::setDescription(strip_tags($seo_data['desc']));
         OpenGraph::addProperty('type', 'website');
