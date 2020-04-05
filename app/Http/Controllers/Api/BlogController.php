@@ -33,7 +33,10 @@ class BlogController extends Controller
 
         //Send this entry Blog Post to Telegram Instant View
         if ($telegram == "1") {
-            dd($blog_post->notify(new PostTelegram));
+            try {
+                $blog_post->notify(new PostTelegram);
+            } catch (Exception $e) {
+            }
         }
 
 
