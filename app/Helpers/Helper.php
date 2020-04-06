@@ -202,3 +202,15 @@ if (!function_exists('twitter_username')) {
         return array_pop($user_name);
     }
 }
+
+//Constructed ad url
+if (!function_exists('amp_replacer')) {
+    /**
+     * Obtiene la URL de un anuncio pasando el $ad object
+     */
+    function amp_replacer($text)
+    {
+        
+        return str_replace("<img", "<amp-img", $text);
+    }
+}

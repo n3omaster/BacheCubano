@@ -2341,7 +2341,7 @@
             </header>
 
             <div class="mb4 px3">
-                {!! nl2br($blog_post->body) !!}
+                {!! nl2br(amp_replacer($blog_post->body)) !!}
             </div>
 
             {{--<amp-img src="../img/blog/ingredient1.jpg" width="683" height="1024" layout="responsive" alt="strawberries" class="mb4 mx3"></amp-img>--}}
@@ -2391,6 +2391,7 @@
                 </section>
                 --}}
 
+                {{--
                 <div class="ampstart-card pt2">
                     <form class="p0 m0 px3 mb4" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=bachecubano/XeKg', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                         <fieldset class="border-none p0 m0">
@@ -2409,6 +2410,7 @@
                         </fieldset>
                     </form>
                 </div>
+                --}}
 
                 <section class="recipe-popular-articles">
                     <h2 class="mb4">Artículos populares</h2>
