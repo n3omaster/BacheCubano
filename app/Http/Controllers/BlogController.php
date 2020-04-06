@@ -139,7 +139,9 @@ class BlogController extends Controller
         //SchemaOrg
         
 
-        return view('blog.show', compact('posts', 'blog_post', 'blog_categories', 'BreadCrumbs'));
+        //AMP or not View
+        return view($this->getView('blog.show'), compact('posts', 'blog_post', 'blog_categories', 'BreadCrumbs'));
+        //return view('blog.show', compact('posts', 'blog_post', 'blog_categories', 'BreadCrumbs'));
     }
 
     /**
@@ -307,5 +309,20 @@ class BlogController extends Controller
         $blog_post->increment('hits');
 
         return true;
+    }
+
+    /**
+     * Dinamic view return based on amp or not
+     */
+    private function getView($viewName)
+    {
+        if (request()->segment(1) == 'amp') {
+            if (view()->exists($viewName . '-amp')) {
+                $viewName .= '-amp';
+            } else {
+                abort(404);
+            }
+        }
+        return $viewName;
     }
 }

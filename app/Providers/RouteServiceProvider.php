@@ -24,7 +24,7 @@ class RouteServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {        
+    {
         parent::boot();
     }
 
@@ -37,9 +37,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        $this->mapAmpRoutes();
 
-        //
+        $this->mapWebRoutes();
     }
 
     /**
@@ -52,8 +52,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
     }
 
     /**
@@ -68,7 +68,18 @@ class RouteServiceProvider extends ServiceProvider
         //prefix('api) has been deleted for a more direct api.bachecubano.com calls
 
         Route::middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Map AMP routes for ShowAds and Show Blog Post
+     */
+    protected function mapAmpRoutes()
+    {
+        Route::prefix('amp')
+            ->middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
     }
 }
