@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('head')
+<link rel="amphtml" href="{{ post_url_amp($blog_post) }}">
+@endpush
+
 @section('content')
 <!-- Page Header Start -->
 <div class="page-header">
@@ -56,6 +60,7 @@
                             <span class="meta-part text-secondary"><i class="lni-pencil"></i> {{ $blog_post->created_at->format('d/m/Y') }}</span>
                             <span class="meta-part text-secondary"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</span>
                             <span class="meta-part text-secondary"><i class="lni-eye"></i> {{ $blog_post->hits }}</span>
+                            <span class="meta-part text-secondary"><a href="{{ post_url_amp($blog_post) }}">⚡</a></span>
                             <span class="meta-part"><a href="{{ post_url($blog_post) }}#disqus_thread"><i class="lni-comments-alt"></i> Comentarios</a></span>
                         </div>
 

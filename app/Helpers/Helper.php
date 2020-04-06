@@ -181,6 +181,17 @@ if (!function_exists('post_url')) {
 }
 
 //Constructed ad url
+if (!function_exists('post_url_amp')) {
+    /**
+     * Obtiene la URL de un anuncio pasando el $ad object
+     */
+    function post_url_amp($post)
+    {
+        return config('app.url') . "amp" . DIRECTORY_SEPARATOR . "blog" . DIRECTORY_SEPARATOR . $post->category->slug . DIRECTORY_SEPARATOR . $post->slug;
+    }
+}
+
+//Constructed ad url
 if (!function_exists('twitter_username')) {
     /**
      * Obtiene la URL de un anuncio pasando el $ad object

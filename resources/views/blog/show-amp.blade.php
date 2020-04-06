@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{ $blog_post->title }}</title>
-    <link rel="canonical" href="https://www.ampstart.com/templates/blog.amp">
+    <link rel="canonical" href="{{ post_url($blog_post) }}">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
@@ -2267,6 +2267,8 @@
         <div class="flex justify-start items-center ampstart-sidebar-header">
             <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
         </div>
+
+        {{--
         <nav class="ampstart-sidebar-nav ampstart-nav">
             <ul class="list-reset m0 p0 ampstart-label">
                 <li class="ampstart-nav-item ampstart-nav-dropdown relative ">
@@ -2287,6 +2289,7 @@
                 <li class="ampstart-nav-item "><a class="ampstart-nav-link" href="#">Shop</a></li>
             </ul>
         </nav>
+        --}}
 
         <ul class="ampstart-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
             <li>
@@ -2412,7 +2415,7 @@
                     @if(isset($posts) && $posts->count() > 0)
                     @foreach($posts as $blog_post)
                     <amp-img src="{{ config('app.img_url') }}blog/thumb_{{ $blog_post->cover }}" width="649" height="497" layout="responsive" alt="{{ $blog_post->title }}" class="mb1"></amp-img>
-                    <a href="{{ post_url($blog_post) }}">
+                    <a href="{{ post_url_amp($blog_post) }}">
                         <h3 class="mb4">{{ $blog_post->title }}</h3>
                     </a>
                     @endforeach

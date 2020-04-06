@@ -16,6 +16,8 @@
 
     @stack('style')
 
+    @stack('head')
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400|Open+Sans">
 
