@@ -2389,7 +2389,6 @@
                 --}}
 
                 <div class="ampstart-card pt2">
-
                     <form class="p0 m0 px3 mb4" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=bachecubano/XeKg', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                         <fieldset class="border-none p0 m0">
                             <h2 class="block mb4">Subscríbete a nuestro boletín:</h2>
