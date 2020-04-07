@@ -99,12 +99,12 @@ class BlogController extends Controller
             'desc' => text_clean(Str::limit(strip_tags($blog_post->body), 160)),
         ];
         SEOMeta::setTitle($seo_data['title']);
-        SEOMeta::setDescription(strip_tags($seo_data['desc']));
+        SEOMeta::setDescription($seo_data['desc']);
         Twitter::setTitle($seo_data['title']);
         TwitterCard::setType('summary_large_image');
         Twitter::addValue('creator', "@" . twitter_username($blog_post->owner->social_twitter));
         OpenGraph::setTitle($seo_data['title']);
-        OpenGraph::setDescription(strip_tags($seo_data['desc']));
+        OpenGraph::setDescription($seo_data['desc']);
         OpenGraph::addProperty('type', 'article');                          //This is an article
         OpenGraph::addImage(config('app.img_url') . "blog/" . $blog_post->cover, ['height' => 480, 'width' => 768]);
 
