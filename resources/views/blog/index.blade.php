@@ -40,23 +40,18 @@
 
                 <!-- Start Post -->
                 <div class="blog-post">
-
                     <!-- Post thumb -->
                     <div class="post-thumb">
                         <a href="{{ post_url($blog_post) }}"><img class="img-fluid" src="{{ config('app.img_url') }}blog/{{ $blog_post->cover }}" alt="{{ $blog_post->title }}"></a>
                         <div class="hover-wrap"></div>
                     </div>
                     <!-- End Post post-thumb -->
-
                     <!-- Post Content -->
                     <div class="post-content">
-
                         <ul class="list-inline cat-meta">
                             <li class="tr-cats"><a href="{{ route('blog_index', ['blog_category_slug' => $blog_post->category->slug]) }}"> {{ $blog_post->category->name }}</a></li>
                         </ul>
-
                         <h2 class="post-title"><a href="{{ post_url($blog_post) }}">{{ $blog_post->title }}</a></h2>
-
                         <div class="meta">
                             <span class="meta-part"><a href="{{ $blog_post->owner->social_twitter }}"><i class="lni-user"></i> {{ $blog_post->owner->name }}</a></span>
                             <span class="meta-part text-secondary"><i class="lni-pencil"></i> {{ $blog_post->updated_at->format('d/m/Y') }}</span>
@@ -69,42 +64,13 @@
                         </div>
                     </div>
                     <!-- Post Content -->
-
                 </div>
                 <!-- End Post -->
 
                 @endforeach
                 @endif
 
-
-                {{--
-                <!-- Start Post -->
-                <div class="blog-post video-post">
-                    <!-- Post thumb -->
-                    <div class="post-thumb">
-                        <div class="video-wrapper">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/qighCE8WfBk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <!-- End Post post-thumb -->
-
-                    <!-- Post Content -->
-                    <div class="post-content">
-                        <ul class="list-inline cat-meta">
-                            <li class="tr-cats"><a href="#">Video</a></li>
-                        </ul>
-                        <h2 class="post-title"><a href="single-post.html">Exercitation Photo Booth</a></h2>
-                        <div class="meta">
-                            <span class="meta-part"><a href="#"><i class="lni-user"></i> Clasihub</a></span>
-                            <span class="meta-part"><a href="#"><i class="lni-alarm-clock"></i> June 21, 2018</a></span>
-                            <span class="meta-part"><a href="#"><i class="lni-folder"></i> Sticky</a></span>
-                            <span class="meta-part"><a href="#"><i class="lni-comments-alt"></i> 1 Comments</a></span>
-                        </div>
-                    </div>
-                    <!-- Post Content -->
-                </div>
-                <!-- End Post -->
-                --}}
+                @include('gads.h')
 
                 <!-- Start Post -->
                 <div class="blog-post quote-post">
@@ -113,14 +79,12 @@
                         <blockquote class="text-center">
                             ¿Quieres escribir para nuestro Blog?
                             <br>
-                            Queremos escucharte, <a href="{{ route('blog_index') }}">aplica aquí</a>
+                            Queremos escucharte, <a href="https://www.bachecubano.com/otros/empleos/quieres-escribir-para-el-blog-de-bachecubano/174014">aplica aquí</a>
                         </blockquote>
                         <i class="fa fa-quote-right"></i>
                     </div>
                 </div>
                 <!-- End Post -->
-
-                @include('gads.h')
 
             </div>
 
