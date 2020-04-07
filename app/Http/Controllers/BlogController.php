@@ -141,7 +141,16 @@ class BlogController extends Controller
         $Article = Schema::Article()
             ->name($seo_data['title'])
             ->image(config('app.img_url') . "blog/" . $blog_post->cover)
-            ->articleBody(json_encode($blog_post->body))
+            ->articleBody(strip_tags($blog_post->body))
+            ->author($blog_post->owner->name)
+            ->datePublished($blog_post->created_at)
+            ->dateModified($blog_post->modified_at)
+            ->headline($seo_data['title'])
+            ->publisher(
+                Schema::organization()
+                    ->name(config('app.name'))
+                    ->logo(asset("android-chrome-512x512.png"))
+            )
             ->aggregateRating(
                 Schema::aggregateRating()
                     ->ratingValue(5)
