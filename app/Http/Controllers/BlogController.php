@@ -141,7 +141,7 @@ class BlogController extends Controller
         $Article = Schema::Article()
             ->name($seo_data['title'])
             ->image(config('app.img_url') . "blog/" . $blog_post->cover)
-            ->articleBody($blog_post->body)
+            ->articleBody(json_encode($blog_post->body))
             ->aggregateRating(
                 Schema::aggregateRating()
                     ->ratingValue(5)
