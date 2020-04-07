@@ -305,11 +305,11 @@ class AdController extends Controller
             'desc' => text_clean(Str::limit(strip_tags($ad->description->description), 160)),
         ];
         SEOMeta::setTitle($seo_data['title']);
-        SEOMeta::setDescription(strip_tags($seo_data['desc']));
+        SEOMeta::setDescription($seo_data['desc']);
         Twitter::setTitle($seo_data['title']);
         TwitterCard::setType('summary_large_image');
         OpenGraph::setTitle($seo_data['title']);
-        OpenGraph::setDescription(strip_tags($seo_data['desc']));
+        OpenGraph::setDescription($seo_data['desc']);
         OpenGraph::addProperty('type', 'website');
 
         //Search Bar

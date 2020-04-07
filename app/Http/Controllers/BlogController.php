@@ -15,6 +15,7 @@ use Artesaos\SEOTools\Facades\TwitterCard;
 
 use Illuminate\Support\Facades\Cache;
 use Spatie\SchemaOrg\Schema;
+use Spatie\SchemaOrg\Graph;
 
 class BlogController extends Controller
 {
@@ -136,12 +137,24 @@ class BlogController extends Controller
                     ->item(post_url($blog_post))
             ]);
 
-        //SchemaOrg
-        
+        //Schema
+        $Article = Schema::Article()
+            ->name($seo_data['title'])
+            ->image(config('app.img_url') . "blog/" . $blog_post->cover)
+            ->articleBody($blog_post->body)
+            ->aggregateRating(
+                Schema::aggregateRating()
+                    ->ratingValue(5)
+                    ->reviewCount(1)
+            );
+
+        $SchemaLD = new Graph();
+        $SchemaLD->add($Article);
+        $SchemaLD->add($BreadCrumbs);
+
 
         //AMP or not View
-        return view($this->getView('blog.show'), compact('posts', 'blog_post', 'blog_categories', 'BreadCrumbs'));
-        //return view('blog.show', compact('posts', 'blog_post', 'blog_categories', 'BreadCrumbs'));
+        return view($this->getView('blog.show'), compact('posts', 'blog_post', 'blog_categories', 'BreadCrumbs', 'SchemaLD'));
     }
 
     /**
