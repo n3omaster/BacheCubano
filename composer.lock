@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3151e2d7ba7bc5605de90ca13d11b9c",
+    "content-hash": "307b721142d05079a11f51daab31b830",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1704,16 +1704,16 @@
         },
         {
             "name": "laravel-notification-channels/telegram",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-notification-channels/telegram.git",
-                "reference": "f17a756ed170e4789898b6f981a0da86bbc785bd"
+                "reference": "bd1d67ca83e16e634759c3bf8b807ee699636865"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-notification-channels/telegram/zipball/f17a756ed170e4789898b6f981a0da86bbc785bd",
-                "reference": "f17a756ed170e4789898b6f981a0da86bbc785bd",
+                "url": "https://api.github.com/repos/laravel-notification-channels/telegram/zipball/bd1d67ca83e16e634759c3bf8b807ee699636865",
+                "reference": "bd1d67ca83e16e634759c3bf8b807ee699636865",
                 "shasum": ""
             },
             "require": {
@@ -1723,7 +1723,7 @@
                 "php": "^7.1"
             },
             "require-dev": {
-                "mockery/mockery": "^1.0",
+                "mockery/mockery": "^1.3",
                 "phpunit/phpunit": "^7.0 || ^8.0"
             },
             "type": "library",
@@ -1760,7 +1760,7 @@
                 "telegram notification",
                 "telegram notifications channel"
             ],
-            "time": "2020-02-19T11:08:49+00:00"
+            "time": "2020-03-26T13:16:39+00:00"
         },
         {
             "name": "laravel-notification-channels/twitter",
