@@ -55,7 +55,7 @@
                         <div class="meta">
                             <span class="meta-part"><a href="{{ $blog_post->owner->social_twitter }}"><i class="lni-user"></i> {{ $blog_post->owner->name }}</a></span>
                             <span class="meta-part text-secondary"><i class="lni-pencil"></i> {{ $blog_post->updated_at->format('d/m/Y') }}</span>
-                            <span class="meta-part text-secondary"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</span>
+                            <span class="meta-part text-secondary"><i class="lni-alarm-clock"></i> {{ est_read_time($blog_post->body) }}</span>
                             <span class="meta-part text-secondary"><i class="lni-eye"></i> {{ $blog_post->hits }}</span>
                             <span class="meta-part"><a href="{{ post_url($blog_post) }}#disqus_thread"><i class="lni-comments-alt"></i> Comentarios</a></span>
                         </div>

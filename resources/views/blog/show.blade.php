@@ -58,7 +58,7 @@
                             <span class="meta-part"><a href="{{ $blog_post->owner->social_twitter }}"><i class="lni-user"></i> <span class="tg-author">{{ $blog_post->owner->name }}</span></a></span>
                             <span class="tg-created d-none">{{ $blog_post->created_at->timestamp }}</span>
                             <span class="meta-part text-secondary"><i class="lni-pencil"></i> {{ $blog_post->created_at->format('d/m/Y') }}</span>
-                            <span class="meta-part text-secondary"><i class="lni-alarm-clock"></i> {{ ceil((strlen($blog_post->body) / 30) / 60) }} minutos</span>
+                            <span class="meta-part text-secondary"><i class="lni-alarm-clock"></i> {{ est_read_time($blog_post->body) }}</span>
                             <span class="meta-part text-secondary"><i class="lni-eye"></i> {{ $blog_post->hits }}</span>
                             <span class="meta-part text-secondary"><a href="{{ post_url_amp($blog_post) }}">⚡</a></span>
                             <span class="meta-part"><a href="{{ post_url($blog_post) }}#disqus_thread"><i class="lni-comments-alt"></i> Comentarios</a></span>

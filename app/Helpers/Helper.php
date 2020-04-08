@@ -210,7 +210,27 @@ if (!function_exists('amp_replacer')) {
      */
     function amp_replacer($text)
     {
-        
+
         return str_replace("<img", "<amp-img", $text);
+    }
+}
+
+
+//Constructed ad url
+if (!function_exists('est_read_time')) {
+    /**
+     * Obtiene la URL de un anuncio pasando el $ad object
+     */
+    function est_read_time($text)
+    {
+        $mycontent = $text; // wordpress users only
+        $word = str_word_count(strip_tags($mycontent));
+        
+        //$m = floor($word / 200);
+        //$s = floor($word % 200 / (200 / 60));
+
+        $m = ceil($word / 200);
+        $est = $m . ' minuto' . ($m == 1 ? '' : 's'); // . ', ' . $s . ' segundo' . ($s == 1 ? '' : 's');
+        return $est;
     }
 }
