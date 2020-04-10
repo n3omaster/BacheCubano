@@ -58,12 +58,6 @@ Route::group(['domain' => 'api.' . config('app.domain')], function () {
             Route::get('update_promoted_ads', 'Api\CronController@update_promoted_ads')->name('update_promoted_ads');
         });
 
-        //Approve a Blog Post
-        Route::group(['prefix' => 'blog'], function () {
-            //Blog Approve Post and Viralice
-            Route::get('approve/{post_id}/{telegram?}/{twitter?}/{push?}/{facebook?}', 'Api\BlogController@approve_post')->name('blog_post_approve')->where('post_id', '[0-9]+');
-        });
-
         //Passport Routes for login/signup/logout/getUser
         Route::group(['prefix' => 'auth'], function () {
             Route::group(['middleware' => ['guest:api']], function () {

@@ -1819,16 +1819,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.5",
+            "version": "v6.18.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5b7f541a3c075b394793f4d7884a24ad6f00288a"
+                "reference": "4ef5f9612c2694c915f53f0cec3e4081e9bfc778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5b7f541a3c075b394793f4d7884a24ad6f00288a",
-                "reference": "5b7f541a3c075b394793f4d7884a24ad6f00288a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4ef5f9612c2694c915f53f0cec3e4081e9bfc778",
+                "reference": "4ef5f9612c2694c915f53f0cec3e4081e9bfc778",
                 "shasum": ""
             },
             "require": {
@@ -1961,7 +1961,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-04-07T18:54:55+00:00"
+            "time": "2020-04-08T15:51:23+00:00"
         },
         {
             "name": "laravel/passport",
@@ -2529,9 +2529,9 @@
             "authors": [
                 {
                     "name": "Ben Corlett",
+                    "role": "Developer",
                     "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au",
-                    "role": "Developer"
+                    "homepage": "http://www.webcomm.com.au"
                 }
             ],
             "description": "OAuth 1.0 Client Library",
@@ -3192,16 +3192,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.26",
+            "version": "2.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "09655fcc1f8bab65727be036b28f6f20311c126c"
+                "reference": "34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/09655fcc1f8bab65727be036b28f6f20311c126c",
-                "reference": "09655fcc1f8bab65727be036b28f6f20311c126c",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc",
+                "reference": "34620af4df7d1988d8f0d7e91f6c8a3bf931d8dc",
                 "shasum": ""
             },
             "require": {
@@ -3280,7 +3280,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2020-03-13T04:15:39+00:00"
+            "time": "2020-04-04T23:17:33+00:00"
         },
         {
             "name": "predis/predis",
@@ -6132,16 +6132,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v7.4.0",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "5024db45b1ec1956e6d5959cbb5cdf5f00f26f56"
+                "reference": "1f5f7a36657a126fa035c7cfaafd738391690967"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/5024db45b1ec1956e6d5959cbb5cdf5f00f26f56",
-                "reference": "5024db45b1ec1956e6d5959cbb5cdf5f00f26f56",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/1f5f7a36657a126fa035c7cfaafd738391690967",
+                "reference": "1f5f7a36657a126fa035c7cfaafd738391690967",
                 "shasum": ""
             },
             "require": {
@@ -6178,7 +6178,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2020-03-31T17:56:15+00:00"
+            "time": "2020-04-08T17:29:27+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
