@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Api\PushController;
 use App\Post;
 use App\PostCategory;
 use Illuminate\Http\Request;
