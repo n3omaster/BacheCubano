@@ -11,6 +11,7 @@ use Twitter;
 use Illuminate\Support\Facades\Auth;
 use App\Ad;
 use App\Mail\TransferReceived;
+use App\Post;
 use Illuminate\Support\Str;
 
 use App\Rules\MatchOldPassword;
@@ -381,6 +382,28 @@ class HomeController extends Controller
      */
     public function blog_posts(Request $request)
     {
+        //My User data
+        $user = Auth::getUser();
+
         //Show all Blog Post here
+        $latest_blog_post = Post::where('user_id', $user->id)->paginate(10);
+
+        //SEO Data
+        $seo_data = [
+            'title' => "Mis publicaciones en el Blog",
+            'desc' => "Gestione aquí sus publicaciones en el Blog de Bachecubano así como sus ingresos publicitarios",
+        ];
+        SEOMeta::setTitle($seo_data['title']);
+        SEOMeta::setDescription($seo_data['desc']);
+        Twitter::setTitle($seo_data['title']);
+        OpenGraph::setTitle($seo_data['title']);
+        OpenGraph::setDescription($seo_data['desc']);
+        OpenGraph::addProperty('type', 'website');
+        $section_name = "Gestionar publicaciónes en el Blog";
+
+        //Search Bar
+        $search_bar = true;
+
+        return view('user.posts', compact('section_name', 'user', 'search_bar', 'latest_blog_post'));
     }
 }

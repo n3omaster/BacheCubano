@@ -54,7 +54,7 @@
             @role('writer')
             <li>
                 <a href="{{ route('my_blog_posts') }}" class="{{ \Route::current()->getName() == 'my_blog_posts' ? 'active' : ''}}">
-                    <i class="lni-docs"></i>
+                    <i class="lni-blogger"></i>
                     <span>Mis publicaciones</span>
                 </a>
             </li>
