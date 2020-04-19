@@ -6,11 +6,12 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Overtrue\LaravelLike\Traits\CanLike;
 use Rennokki\Rating\Traits\CanRate;
 use Rennokki\Rating\Contracts\Rater;
 use Rennokki\Befriended\Traits\Follow;
 use Rennokki\Befriended\Contracts\Following;
+
+use Overtrue\LaravelLike\Traits\Liker;
 
 use App\Notifications\ResetPassword;
 
@@ -18,7 +19,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Rater, Following
 {
-    use HasApiTokens, Notifiable, CanLike, CanRate, Follow;
+    use HasApiTokens, Notifiable, Liker, CanRate, Follow;
 
     //Spatie Roles
     use HasRoles;

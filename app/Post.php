@@ -3,13 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Overtrue\LaravelLike\Traits\CanBeLiked;
-
+use Overtrue\LaravelLike\Traits\Likeable;
 use Illuminate\Notifications\Notifiable;
 
 class Post extends Model
 {
-    use CanBeLiked;
+    use Likeable;
 
     //Allow this model to be used as Notifications
     use Notifiable;

@@ -4,10 +4,11 @@ namespace App;
 
 use App\Mail\Exception;
 use Illuminate\Database\Eloquent\Model;
-use Overtrue\LaravelLike\Traits\CanBeLiked;
 use Rennokki\Rating\Traits\CanBeRated;
 use Rennokki\Rating\Contracts\Rateable;
 use Illuminate\Notifications\Notifiable;
+
+use Overtrue\LaravelLike\Traits\Likeable;
 
 /**
  * ads, ad_description, ad_location, ad_promo, ad_resource, ad_stats
@@ -15,7 +16,7 @@ use Illuminate\Notifications\Notifiable;
 class Ad extends Model implements Rateable
 {
     //Like and Rating Traits
-    use CanBeLiked, CanBeRated;
+    use Likeable, CanBeRated;
 
     //Allow this model to be used as Notifications feature for paid ads
     use Notifiable;
