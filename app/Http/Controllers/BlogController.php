@@ -283,7 +283,6 @@ class BlogController extends Controller
 
         //¿Cover Update?
 
-
         //Get the Blog Post
         $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
 
