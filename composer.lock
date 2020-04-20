@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6341bd3cdeae197aa4073066724debf",
+    "content-hash": "b4c289a03cf8dc3d925158c32012dcf7",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1357,16 +1357,16 @@
         },
         {
             "name": "irazasyed/telegram-bot-sdk",
-            "version": "dev-develop",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irazasyed/telegram-bot-sdk.git",
-                "reference": "036760eba8f268f5448ff04664c01839165a1cd8"
+                "reference": "cc0af4e0ee41be5a0e732572e2de86abbe43128d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irazasyed/telegram-bot-sdk/zipball/036760eba8f268f5448ff04664c01839165a1cd8",
-                "reference": "036760eba8f268f5448ff04664c01839165a1cd8",
+                "url": "https://api.github.com/repos/irazasyed/telegram-bot-sdk/zipball/cc0af4e0ee41be5a0e732572e2de86abbe43128d",
+                "reference": "cc0af4e0ee41be5a0e732572e2de86abbe43128d",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1424,7 @@
                 "telegram php",
                 "telegram sdk"
             ],
-            "time": "2020-04-18T11:47:36+00:00"
+            "time": "2020-04-11T14:59:09+00:00"
         },
         {
             "name": "kylewm/brevity",
@@ -8446,9 +8446,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "irazasyed/telegram-bot-sdk": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
