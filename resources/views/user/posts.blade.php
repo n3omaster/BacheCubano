@@ -22,6 +22,9 @@
                         </div>
                     </div>
                 </div>
+                @php
+                $total_hits = 0;
+                @endphp
                 @foreach($latest_blog_post as $blog_post)
                 <div class="col-12">
                     <div class="row">
@@ -37,7 +40,6 @@
                     </div>
                 </div>
                 @php
-                $total_hits = 0;
                 $total_hits += $blog_post->hits;
                 @endphp
                 @endforeach
