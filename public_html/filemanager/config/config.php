@@ -13,6 +13,11 @@ ob_start('mb_output_handler');
 date_default_timezone_set('Europe/Rome');
 setlocale(LC_CTYPE, 'en_US'); //correct transliteration
 
+//Custom code here, show errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 /*
 |--------------------------------------------------------------------------
 | Optional security
