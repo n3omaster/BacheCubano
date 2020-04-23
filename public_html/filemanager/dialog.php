@@ -1,4 +1,10 @@
 <?php
+
+//Custom code here, show errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $time = time();
 
 $config = include 'config/config.php';
@@ -874,11 +880,11 @@ $get_params = http_build_query($get_params);
                         $tmp_path .= $b . "/";
                         if ($k == count($bc) - 2) {
                 ?> <li class="active"><?php echo $b ?></li><?php
-                                            } elseif ($b != "") { ?>
+                                                        } elseif ($b != "") { ?>
                         <li><a href="<?php echo $link . $tmp_path ?>"><?php echo $b ?></a></li>
                         <li><span class="divider"><?php echo "/"; ?></span></li>
                 <?php }
-                                        }
+                                                    }
                 ?>
 
                 <li class="pull-right"><a class="btn-small" href="javascript:void('')" id="info"><i class="icon-question-sign"></i></a></li>
@@ -985,15 +991,15 @@ $get_params = http_build_query($get_params);
                         ?>
                             <li data-name="<?php echo $file ?>" class="<?php if ($file == '..') echo 'back';
                                                                         else echo 'dir'; ?> <?php if (!$config['multiple_selection']) { ?>no-selector<?php } ?>" <?php if (($filter != '' && stripos($file, $filter) === false)) echo ' style="display:none;"'; ?>><?php
-                                                                                                                                                                                                                                                                                            $file_prevent_rename = false;
-                                                                                                                                                                                                                                                                                            $file_prevent_delete = false;
-                                                                                                                                                                                                                                                                                            if (isset($filePermissions[$file])) {
-                                                                                                                                                                                                                                                                                                $file_prevent_rename = isset($filePermissions[$file]['prevent_rename']) && $filePermissions[$file]['prevent_rename'];
-                                                                                                                                                                                                                                                                                                $file_prevent_delete = isset($filePermissions[$file]['prevent_delete']) && $filePermissions[$file]['prevent_delete'];
-                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                            ?><figure data-name="<?php echo $file ?>" data-path="<?php echo $rfm_subfolder . $subdir . $file; ?>" class="<?php if ($file == "..") echo "back-"; ?>directory" data-type="<?php if ($file != "..") {
-                                                                                                                                                                                        echo "dir";
-                                                                                                                                                                                    } ?>">
+                                                                                                                                                                                                                                                                    $file_prevent_rename = false;
+                                                                                                                                                                                                                                                                    $file_prevent_delete = false;
+                                                                                                                                                                                                                                                                    if (isset($filePermissions[$file])) {
+                                                                                                                                                                                                                                                                        $file_prevent_rename = isset($filePermissions[$file]['prevent_rename']) && $filePermissions[$file]['prevent_rename'];
+                                                                                                                                                                                                                                                                        $file_prevent_delete = isset($filePermissions[$file]['prevent_delete']) && $filePermissions[$file]['prevent_delete'];
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                    ?><figure data-name="<?php echo $file ?>" data-path="<?php echo $rfm_subfolder . $subdir . $file; ?>" class="<?php if ($file == "..") echo "back-"; ?>directory" data-type="<?php if ($file != "..") {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo "dir";
+                                                                                                                                                                                                                                                                                                                                                                                                                                                } ?>">
                                     <?php if ($file == "..") { ?>
                                         <input type="hidden" class="path" value="<?php echo str_replace('.', '', dirname($rfm_subfolder . $subdir)); ?>" />
                                         <input type="hidden" class="path_thumb" value="<?php echo dirname($thumbs_path) . "/"; ?>" />
@@ -1167,21 +1173,21 @@ $get_params = http_build_query($get_params);
                             if ((!($_GET['type'] == 1 && !$is_img) && !(($_GET['type'] == 3 && !$is_video) && ($_GET['type'] == 3 && !$is_audio))) && $class_ext > 0) {
                             ?>
                                 <li class="ff-item-type-<?php echo $class_ext; ?> file <?php if (!$config['multiple_selection']) { ?>no-selector<?php } ?>" data-name="<?php echo $file; ?>" <?php if (($filter != '' && stripos($file, $filter) === false)) echo ' style="display:none;"'; ?>><?php
-                                                                                                                                                                                                                                                                                    $file_prevent_rename = false;
-                                                                                                                                                                                                                                                                                    $file_prevent_delete = false;
-                                                                                                                                                                                                                                                                                    if (isset($filePermissions[$file])) {
-                                                                                                                                                                                                                                                                                        if (isset($filePermissions[$file]['prevent_duplicate']) && $filePermissions[$file]['prevent_duplicate']) {
-                                                                                                                                                                                                                                                                                            $files_prevent_duplicate[] = $file;
-                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                        $file_prevent_rename = isset($filePermissions[$file]['prevent_rename']) && $filePermissions[$file]['prevent_rename'];
-                                                                                                                                                                                                                                                                                        $file_prevent_delete = isset($filePermissions[$file]['prevent_delete']) && $filePermissions[$file]['prevent_delete'];
-                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                    ?>
+                                                                                                                                                                                                                                                                                                $file_prevent_rename = false;
+                                                                                                                                                                                                                                                                                                $file_prevent_delete = false;
+                                                                                                                                                                                                                                                                                                if (isset($filePermissions[$file])) {
+                                                                                                                                                                                                                                                                                                    if (isset($filePermissions[$file]['prevent_duplicate']) && $filePermissions[$file]['prevent_duplicate']) {
+                                                                                                                                                                                                                                                                                                        $files_prevent_duplicate[] = $file;
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                    $file_prevent_rename = isset($filePermissions[$file]['prevent_rename']) && $filePermissions[$file]['prevent_rename'];
+                                                                                                                                                                                                                                                                                                    $file_prevent_delete = isset($filePermissions[$file]['prevent_delete']) && $filePermissions[$file]['prevent_delete'];
+                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                ?>
                                     <figure data-name="<?php echo $file ?>" data-path="<?php echo $rfm_subfolder . $subdir . $file; ?>" data-type="<?php if ($is_img) {
-                                                                                                                                                    echo "img";
-                                                                                                                                                } else {
-                                                                                                                                                    echo "file";
-                                                                                                                                                } ?>">
+                                                                                                                                                        echo "img";
+                                                                                                                                                    } else {
+                                                                                                                                                        echo "file";
+                                                                                                                                                    } ?>">
                                         <?php if ($config['multiple_selection']) { ?><div class="selector">
                                                 <label class="cont">
                                                     <input type="checkbox" class="selection" name="selection[]" value="<?php echo $file; ?>">
