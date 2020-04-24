@@ -40,7 +40,6 @@
                             <li><a href="#report-user">Protección de compras</a></li>
                             <li><a href="{{ route('terms') }}">Términos y Condiciones</a></li>
                             <li><a href="{{ route('contact') }}">Contáctanos</a></li>
-                            <li><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es">Licencia de uso</a></li>
                         </ul>
                     </div>
                 </div>
