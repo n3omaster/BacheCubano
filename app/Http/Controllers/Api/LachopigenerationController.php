@@ -47,7 +47,7 @@ class LachopigenerationController extends Controller
     /**
      * Wrapper method for all them
      */
-    public function generate(Request $request)
+    public function generate()
     {
 
         //Copy a new DB from the matrix DB

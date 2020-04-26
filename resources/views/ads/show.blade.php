@@ -99,10 +99,12 @@
                                     <p><strong>Promo:</strong> {{ ad_promotion_text_type($ad->promo) }}</p>
                                 </li>
                                 @endif
-                                <!--
+                                @if(isset($ad->location))
                                 <li>
-                                    <p><strong><i class="lni-archive"></i> Estado:</strong> Nuevo</p>
+                                    <p><strong><i class="lni-map-marker"></i> Ubicación:</strong> <a href="#{{ $ad->location->slug }}">{{ $ad->location->title }}</a></p>
                                 </li>
+                                @endif
+                                <!--
                                 <li>
                                     <p><strong><i class="lni-package"></i> Marca:</strong> <a href="#"> xxx</a></p>
                                 </li>
