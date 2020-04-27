@@ -56,7 +56,7 @@ class LachopigenerationController extends Controller
         copy('/home/erich33/public_html/sitios/lachopi/chcenter copy.db', '/home/erich33/public_html/sitios/lachopi/' . $new_db_name);
 
         //Get DB Link and perform somr cleaning operations
-        $this->bd = new SQLite3('./sitios/lachopi/' . $new_db_name);
+        $this->bd = new SQLite3('/home/erich33/public_html/sitios/lachopi/' . $new_db_name);
 
         /*
         $this->logs .= "<h2>Delete All tables data (TRUNCATE)</h2>";
