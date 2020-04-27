@@ -79,9 +79,7 @@ class LachopigenerationController extends Controller
         $result = $this->generate_categories();
 
         echo 'data: ' . json_encode($result) . '\n';
-        ob_flush();
-        flush();
-
+        
         //Meta INFO
         $this->now = new \DateTime();
         $this->now = $this->now->format('Y-m-d H:i:s');
@@ -217,8 +215,6 @@ class LachopigenerationController extends Controller
                     $smtm->execute();
 
                     echo 'Ad: ' . json_encode($ad->id) . '\n';
-                    ob_flush();
-                    flush();
 
                     //Phootos save
                     try {
