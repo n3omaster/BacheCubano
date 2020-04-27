@@ -1,3 +1,8 @@
+### v2.1
+
+    - Added Location to ads
+    - Crated LaChopi artisan command
+
 ### v2.0
 
     - User links
@@ -6,7 +11,6 @@
     - Blog Post auto share to Twitter, Facebook, Push and Telegram networks
     - Blog BreadCrumbs
     - Blog Time to read calc
-    - 
 
 ### v1.9.1
 
