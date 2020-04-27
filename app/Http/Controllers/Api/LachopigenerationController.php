@@ -53,7 +53,7 @@ class LachopigenerationController extends Controller
         //Copy a new DB from the matrix DB
         $new_db_name = "chcenter-" . date("Ymd") . "-" . rand(0, 999) . ".db";
 
-        copy('./sitios/lachopi/chcenter copy.db', './sitios/lachopi/' . $new_db_name);
+        copy('/home/erich33/public_html/sitios/lachopi/chcenter copy.db', '/home/erich33/public_html/sitios/lachopi/' . $new_db_name);
 
         //Get DB Link and perform somr cleaning operations
         $this->bd = new SQLite3('./sitios/lachopi/' . $new_db_name);
