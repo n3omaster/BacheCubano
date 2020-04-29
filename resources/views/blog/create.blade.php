@@ -124,7 +124,8 @@
         filemanager_title: "Responsive Filemanager",
         external_plugins: {
             "filemanager": "/filemanager/plugin.min.js"
-        }
+        },
+        entity_encoding : "raw"
     });
 </script>
 
