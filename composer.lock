@@ -2531,9 +2531,9 @@
             "authors": [
                 {
                     "name": "Ben Corlett",
-                    "role": "Developer",
                     "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au"
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
                 }
             ],
             "description": "OAuth 1.0 Client Library",
@@ -3917,25 +3917,24 @@
         },
         {
             "name": "rennokki/rating",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/renoki-co/rating.git",
-                "reference": "df9dcc16778eb1cdfdcbb63cd44936b3e48316d0"
+                "reference": "e7db135c2ed57aadf5acc3ff1ad49f7756f2dc85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/renoki-co/rating/zipball/df9dcc16778eb1cdfdcbb63cd44936b3e48316d0",
-                "reference": "df9dcc16778eb1cdfdcbb63cd44936b3e48316d0",
+                "url": "https://api.github.com/repos/renoki-co/rating/zipball/e7db135c2ed57aadf5acc3ff1ad49f7756f2dc85",
+                "reference": "e7db135c2ed57aadf5acc3ff1ad49f7756f2dc85",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.5|^6.0"
+                "laravel/framework": "^6.0|^7.0"
             },
             "require-dev": {
-                "orchestra/database": "~3.5.0|~3.6.0|~4.0.0",
-                "orchestra/testbench": "~3.5.0|~3.6.0|~4.0.0",
-                "phpunit/phpunit": "^6.2|^7.0|^8.0"
+                "orchestra/database": "^5.0",
+                "orchestra/testbench": "^5.0"
             },
             "type": "library",
             "extra": {
@@ -3957,13 +3956,13 @@
             "authors": [
                 {
                     "name": "Alex Renoki",
-                    "email": "rennokki@gmail.com",
-                    "homepage": "https://twitter.com/rennokki",
+                    "email": "alex@renoki.org",
+                    "homepage": "https://github.com/rennokki",
                     "role": "Developer"
                 }
             ],
             "description": "Laravel Eloquent Rating allows you to assign ratings to any model.",
-            "homepage": "https://github.com/rennokki/rating",
+            "homepage": "https://github.com/renoki-co/rating",
             "keywords": [
                 "Rate",
                 "Rating",
@@ -3974,7 +3973,7 @@
                 "stars",
                 "system"
             ],
-            "time": "2019-11-23T16:44:17+00:00"
+            "time": "2020-04-29T17:07:40+00:00"
         },
         {
             "name": "spatie/browsershot",
