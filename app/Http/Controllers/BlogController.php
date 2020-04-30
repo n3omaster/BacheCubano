@@ -242,22 +242,23 @@ class BlogController extends Controller
     {
         $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
 
-        //Get logged in user and permissions of it
-        if (!Auth::check() || (Auth::id() !== $blog_post->user_id && Auth::id() !== 1)) {
+        if (Auth::check() && (Auth::id() !== $blog_post->user_id || Auth::hasRole('moderator'))) {
+            
+            $edit = true;
+
+            //Get All Categories
+            //Retrieve Ad with aditional data
+            $blog_categories = Cache::remember('post_categories', 120, function () {
+                return PostCategory::all();
+            });
+
+            // we are using route model binding 
+            // view edit page with post data
+            return view('blog.create')->with(['blog_post' => $blog_post, 'edit' => $edit, 'blog_categories' => $blog_categories]);
+
+        } else {
             abort(404);
         }
-
-        $edit = true;
-
-        //Get All Categories
-        //Retrieve Ad with aditional data
-        $blog_categories = Cache::remember('post_categories', 120, function () {
-            return PostCategory::all();
-        });
-
-        // we are using route model binding 
-        // view edit page with post data
-        return view('blog.create')->with(['blog_post' => $blog_post, 'edit' => $edit, 'blog_categories' => $blog_categories]);
     }
 
     /**

@@ -14,14 +14,14 @@
     @endrole
 
     @role('writer')
-    @if(isset($blog_post) && (Auth::id() == $blog_post->user_id || Auth::id() == 1))
+    @if(isset($blog_post) && (Auth::id() == $blog_post->user_id || @role('moderator')))
     <a class="btn btn-warning btn-block mb-5 mt-0" href="{{ route('blog_post_edit', ['post_id' => $blog_post->id]) }}">Editar noticia</a>
     @endif
     @endrole
 
-    @if(isset($blog_post) && Auth::id() == 1)
+    @role('moderator')
     <a class="btn btn-success btn-block mb-5 mt-0" href="{{ route('blog_post_approve', ['post_id' => $blog_post->id]) }}">Aprobar/Promocionar noticia</a>
-    @endif
+    @endrole
 
     @endauth
 
