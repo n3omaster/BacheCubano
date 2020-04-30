@@ -244,8 +244,8 @@ class BlogController extends Controller
     {
         $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
 
-        if (Auth::check() && (Auth::id() !== $blog_post->user_id || (User::find(Auth::id()))->hasRole('moderator'))) {
-            
+        if (Auth::check() && (Auth::id() == $blog_post->user_id || (User::find(Auth::id()))->hasRole('moderator'))) {
+
             $edit = true;
 
             //Get All Categories
@@ -257,7 +257,6 @@ class BlogController extends Controller
             // we are using route model binding 
             // view edit page with post data
             return view('blog.create')->with(['blog_post' => $blog_post, 'edit' => $edit, 'blog_categories' => $blog_categories]);
-
         } else {
             abort(404);
         }
@@ -274,30 +273,31 @@ class BlogController extends Controller
         $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
 
         //Get logged in user and permissions of it
-        if (!Auth::check() || (Auth::id() !== $blog_post->user_id && Auth::id() !== 1)) {
+        if (Auth::check() && (Auth::id() == $blog_post->user_id || (User::find(Auth::id()))->hasRole('moderator'))) {
+            
+            // validate incoming request data with validation rules
+            $this->validate(request(), [
+                'title' => 'required|min:1|max:255',
+                'body'  => 'required|min:1'
+            ]);
+
+            //¿Cover Update?
+
+            //Get the Blog Post
+            $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
+
+            // update post with new data using update() method
+            $blog_post->update([
+                'title'     => $request->input('title'),
+                'body'      => $request->input('body'),
+                'tags' => $request->input('tags')
+            ]);
+
+            // return to show post URL
+            return redirect(post_url($blog_post));
+        } else {
             abort(404);
         }
-
-        // validate incoming request data with validation rules
-        $this->validate(request(), [
-            'title' => 'required|min:1|max:255',
-            'body'  => 'required|min:1'
-        ]);
-
-        //¿Cover Update?
-
-        //Get the Blog Post
-        $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
-
-        // update post with new data using update() method
-        $blog_post->update([
-            'title'     => $request->input('title'),
-            'body'      => $request->input('body'),
-            'tags' => $request->input('tags')
-        ]);
-
-        // return to show post URL
-        return redirect(post_url($blog_post));
     }
 
     /**
