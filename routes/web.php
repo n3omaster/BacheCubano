@@ -80,6 +80,7 @@ Route::group(['prefix' => 'blog'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     //Add specific role to specific user
     Route::get('/assign-role/{user_id}/{rolename}', 'Admin\UserController@assign_role')->name('admin_assign_role');
+    Route::get('/role_premission_create', 'Admin\UserController@role_premission_create')->name('role_premission_create');
 });
 
 //User Routes for Configuration (Mainly registered area) with some Auth Middleware

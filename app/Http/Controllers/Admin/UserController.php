@@ -115,4 +115,16 @@ class UserController extends Controller
     public function assign_permission()
     {
     }
+
+    /**
+     * Create role and permissions
+     */
+    public function role_premission_create()
+    {
+        $role = Role::create(['name' => 'moderator']);
+        $permission = Permission::create(['name' => 'approve articles']);
+
+        $role->givePermissionTo($permission);
+        $permission->assignRole($role);
+    }
 }
