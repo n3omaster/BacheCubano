@@ -26,7 +26,9 @@
     @endif
 
     @role('moderator')
+    @if(isset($blog_post))
     <a class="btn btn-success btn-block mb-5 mt-0" href="{{ route('blog_post_approve', ['post_id' => $blog_post->id]) }}">Aprobar/Promocionar noticia</a>
+    @endif
     @endrole
 
     @endauth
