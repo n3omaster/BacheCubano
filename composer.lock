@@ -2531,9 +2531,9 @@
             "authors": [
                 {
                     "name": "Ben Corlett",
-                    "role": "Developer",
                     "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au"
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
                 }
             ],
             "description": "OAuth 1.0 Client Library",
@@ -3850,26 +3850,25 @@
         },
         {
             "name": "rennokki/befriended",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/renoki-co/befriended.git",
-                "reference": "bb8e2b4a6f39af2b541b3ad60ad6c55a3b19e1b9"
+                "reference": "981569ce04e7538cdbc280d0ec84dfbcc2dff69d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/renoki-co/befriended/zipball/bb8e2b4a6f39af2b541b3ad60ad6c55a3b19e1b9",
-                "reference": "bb8e2b4a6f39af2b541b3ad60ad6c55a3b19e1b9",
+                "url": "https://api.github.com/repos/renoki-co/befriended/zipball/981569ce04e7538cdbc280d0ec84dfbcc2dff69d",
+                "reference": "981569ce04e7538cdbc280d0ec84dfbcc2dff69d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.10",
-                "laravel/framework": "~5.5|^6.0|^7.0"
+                "laravel/framework": "^6.0|^7.0"
             },
             "require-dev": {
-                "orchestra/database": "~4.2.0|^5.0",
-                "orchestra/testbench": "~4.2.0|^5.0",
-                "phpunit/phpunit": "^8.0"
+                "orchestra/database": "^5.0",
+                "orchestra/testbench": "^5.0"
             },
             "type": "library",
             "extra": {
@@ -3891,12 +3890,13 @@
             "authors": [
                 {
                     "name": "Alex Renoki",
-                    "homepage": "https://twitter.com/rennokki",
+                    "email": "alex@renoki.org",
+                    "homepage": "https://github.com/rennokki",
                     "role": "Developer"
                 }
             ],
             "description": "Eloquent Befriended brings social media-like features like following, blocking and filtering content based on following or blocked models.",
-            "homepage": "https://github.com/rennokki/befriended",
+            "homepage": "https://github.com/renoki-co/befriended",
             "keywords": [
                 "Connection",
                 "Followers",
@@ -3913,7 +3913,7 @@
                 "model",
                 "social"
             ],
-            "time": "2020-03-09T06:57:53+00:00"
+            "time": "2020-04-29T17:08:44+00:00"
         },
         {
             "name": "rennokki/rating",
