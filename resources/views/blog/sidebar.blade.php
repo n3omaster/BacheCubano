@@ -13,11 +13,15 @@
     <a class="btn btn-primary btn-block mb-2 mt-0" href="{{ route('blog_post_create') }}">Publicar noticia</a>
     @endrole
 
+    @role('moderator')
+    <a class="btn btn-warning btn-block mb-5 mt-0" href="{{ route('blog_post_edit', ['post_id' => $blog_post->id]) }}">Moderar Noticia</a>
+    @elserole
     @role('writer')
     @if(isset($blog_post) && (Auth::id() == $blog_post->user_id))
     <a class="btn btn-warning btn-block mb-5 mt-0" href="{{ route('blog_post_edit', ['post_id' => $blog_post->id]) }}">Editar noticia</a>
     @endif
     @endrole
+    @endif
 
     @role('moderator')
     <a class="btn btn-success btn-block mb-5 mt-0" href="{{ route('blog_post_approve', ['post_id' => $blog_post->id]) }}">Aprobar/Promocionar noticia</a>
