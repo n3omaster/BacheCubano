@@ -274,7 +274,7 @@ class BlogController extends Controller
 
         //Get logged in user and permissions of it
         if (Auth::check() && (Auth::id() == $blog_post->user_id || (User::find(Auth::id()))->hasRole('moderator'))) {
-            
+
             // validate incoming request data with validation rules
             $this->validate(request(), [
                 'title' => 'required|min:1|max:255',
@@ -363,52 +363,51 @@ class BlogController extends Controller
     public function approve_post($post_id, $telegram = "1", $twitter = "1", $push = "1", $facebook = "1")
     {
         //Get logged in user and permissions of it
-        if (!Auth::check() || Auth::id() !== 1) {
+        if (Auth::check() && (User::find(Auth::id()))->hasRole('moderator')) {
+
+            $blog_post = Post::findOrFail($post_id);
+
+            //Set approved
+            $blog_post->update(['enabled' => 1]);
+
+            //Send this entry Blog Post to Telegram Instant View
+            if ($telegram == "1") {
+                try {
+                    $blog_post->notify(new PostTelegram);
+                } catch (Exception $e) {
+                }
+            }
+
+
+            //Send this Post to Twitter
+            if ($twitter == "1") {
+                try {
+                    $blog_post->notify(new PostTwitter);
+                } catch (Exception $e) {
+                }
+            }
+
+            //Send Push notification for the Blog entry
+            if ($push == "1") {
+                try {
+                    PushController::send_notification_post($blog_post);
+                } catch (Exception $e) {
+                    Log::error(json_encode($e));
+                }
+            }
+
+            //Faxcebook Blog Post
+            if ($facebook == "1") {
+                try {
+                    $blog_post->notify(new PostFacebook);
+                } catch (Exception $e) {
+                }
+            }
+
+            //Redirect to the current post entry
+            return redirect(post_url($blog_post));
+        } else {
             abort(404);
         }
-
-        $blog_post = Post::findOrFail($post_id);
-
-        //Set approved
-        $blog_post->update(['enabled' => 1]);
-
-
-        //Send this entry Blog Post to Telegram Instant View
-        if ($telegram == "1") {
-            try {
-                $blog_post->notify(new PostTelegram);
-            } catch (Exception $e) {
-            }
-        }
-
-
-        //Send this Post to Twitter
-        if ($twitter == "1") {
-            try {
-                $blog_post->notify(new PostTwitter);
-            } catch (Exception $e) {
-            }
-        }
-
-        //Send Push notification for the Blog entry
-        if ($push == "1") {
-            try {
-                //ANORMAAAAAAAAAAAALLLLLLLLLLLLL
-                PushController::send_notification_post($blog_post);
-            } catch (Exception $e) {
-                Log::error(json_encode($e));
-            }
-        }
-
-        //Faxcebook Blog Post
-        if ($facebook == "1") {
-            try {
-                $blog_post->notify(new PostFacebook);
-            } catch (Exception $e) {
-            }
-        }
-
-        //Redirect to the current post entry
-        return redirect(post_url($blog_post));
     }
 }
