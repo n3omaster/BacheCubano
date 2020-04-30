@@ -24,8 +24,6 @@ use App\Notifications\PostTwitter;
 use Exception;
 use Illuminate\Support\Facades\Log;
 
-use App\User;
-
 class BlogController extends Controller
 {
     /**
@@ -244,8 +242,8 @@ class BlogController extends Controller
     {
         $blog_post = Post::with('owner', 'category')->findOrFail($post_id);
 
-        if (Auth::check() && Auth::id() == $blog_post->user_id) {
-
+        if (Auth::check() && (Auth::id() !== $blog_post->user_id || Auth::hasRole('moderator'))) {
+            
             $edit = true;
 
             //Get All Categories
