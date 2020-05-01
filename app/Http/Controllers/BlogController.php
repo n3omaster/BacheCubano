@@ -71,9 +71,6 @@ class BlogController extends Controller
 
         $posts = $post_query->paginate(10);
 
-        //Schema
-
-
         //Bog Categories
         $blog_categories = Cache::remember('blog_categories', 60 * 24, function () {
             return PostCategory::where('enabled', 1)->get();
