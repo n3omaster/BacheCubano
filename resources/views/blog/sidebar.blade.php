@@ -17,14 +17,13 @@
     @if(isset($blog_post))
     <a class="btn btn-warning btn-block mb-5 mt-0" href="{{ route('blog_post_edit', ['post_id' => $blog_post->id]) }}">Moderar Noticia</a>
     @endif
-    @elserole
-
+    @else
     @role('writer')
     @if(isset($blog_post) && (Auth::id() == $blog_post->user_id))
     <a class="btn btn-warning btn-block mb-5 mt-0" href="{{ route('blog_post_edit', ['post_id' => $blog_post->id]) }}">Editar noticia</a>
     @endif
     @endrole
-    
+
     @endif
 
     @role('moderator')
