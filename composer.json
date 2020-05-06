@@ -22,7 +22,7 @@
         "laravel-notification-channels/telegram": "^0.3.0",
         "laravel-notification-channels/twitter": "^3.0",
         "laravel/framework": "^6.2",
-        "laravel/passport": "^8.4",
+        "laravel/passport": "^9.0",
         "laravel/socialite": "^4.1",
         "laravel/tinker": "^2.2",
         "overtrue/laravel-like": "^2.0",
