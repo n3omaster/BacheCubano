@@ -71,6 +71,7 @@ class WelcomeController extends Controller
             ->priceRange("$$")
             ->image('https://www.bachecubano.com/android-chrome-512x512.png')
             ->description($seo_data['desc'])
+            ->sameAs(['https://twitter.com/Bachecubano', 'https://www.facebook.com/Bachecubano', 'https://www.instagram.com/Bachecubano', 'https://www.pinterest.com/bachecubano'])
             ->address(
                 Schema::PostalAddress()
                     ->streetAddress('Calle 35 #1477 entre 26 y 28, Nuevo Vedado, La habana, Cuba')
