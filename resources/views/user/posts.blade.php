@@ -51,7 +51,7 @@
                         <div class="col-8">
                         </div>
                         <div class="col-2 text-right" title="Ingresos estimados">
-                            ${{ number_format($total_hits > 0 ? ($total_hits / 1000) * 0.50 : 0, 2) }}
+                            ${{ number_format($total_hits > 0 ? ($total_hits / 1000) * 0.55 : 0, 2) }}
                         </div>
                     </div>
                 </div>

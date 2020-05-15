@@ -65,7 +65,7 @@ class AppServiceProvider extends ServiceProvider
         //Ad Submit Validation
         Validator::extend('banned_words', function ($attribute, $value, $parameters) {
             // Banned words
-            $words = array('prestamo', 'finanzas', 'préstamo', 'loan', 'mind.capital');
+            $words = array('prestamo', 'finanzas', 'préstamo', 'loan', 'mind.capital', 'money');
             foreach ($words as $word) {
                 if (stripos($value, $word) !== false) return false;
             }
