@@ -34,7 +34,7 @@
                     <div class="widget">
                         <h3 class="block-title">Ayuda & soporte</h3>
                         <ul class="menu">
-                            <li><a href="{{ route('blog_index') }}">El Blog Bachecubano</a></li>
+                            <li><a href="{{ route('blog_index') }}">Bachecubano Blog</a></li>
                             <li><a href="https://m.me/Bachecubano">Chatea con Bachecubano</a></li>
                             <li><a href="#privacy-page">Política de Privacidad</a></li>
                             <li><a href="#report-user">Protección de compras</a></li>

@@ -35,7 +35,7 @@ class BlogController extends Controller
     {
         //SEO Data
         $seo_data = [
-            'title' => "El Blog Bachecubano",
+            'title' => "Bachecubano Blog",
             'desc' => "Noticias, ofertas, reviews e información general sobre Cuba",
         ];
         if ($request->has('s')) {
