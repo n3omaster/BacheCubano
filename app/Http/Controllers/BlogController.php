@@ -35,13 +35,13 @@ class BlogController extends Controller
     {
         //SEO Data
         $seo_data = [
-            'title' => "Blog de Noticias Comercio y Compra venta en Cuba",
-            'desc' => "Noticias, ofertas, reviews e información general sobre la compra venta en Cuba",
+            'title' => "Blog Bachecubano",
+            'desc' => "Noticias, ofertas, reviews e información general sobre Cuba",
         ];
         if ($request->has('s')) {
             $seo_data = [
                 'title' => "Buscando " . $request->input('s') . " en el Blog Bachecubano",
-                'desc' => "Buscando " . $request->input('s') . " en el Blog Bachecubano. Todo sobre tecnolog'ia y noticias de negocios en Cuba"
+                'desc' => "Buscando " . $request->input('s') . " en el Blog Bachecubano"
             ];
         }
         SEOMeta::setTitle($seo_data['title']);
