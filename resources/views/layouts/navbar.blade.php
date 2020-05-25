@@ -35,14 +35,9 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ route('blog_index') }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="https://blog.bachecubano.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Blog
                     </a>
-                    <div class="dropdown-menu">
-                        @foreach($latest_blog_post as $blog_post)
-                        <a class="dropdown-item" href="{{ post_url($blog_post) }}">{{ $blog_post->title }}</a>
-                        @endforeach
-                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact') }}">

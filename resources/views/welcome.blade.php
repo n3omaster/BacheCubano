@@ -22,7 +22,9 @@
 @include('blocks.testimonial') 
 --}}
 
+{{-- 
 @include('blocks.blog-grid')
+--}}
 
 {{-- 
 @include('blocks.subscribe')
