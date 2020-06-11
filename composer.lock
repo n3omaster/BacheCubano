@@ -352,20 +352,20 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "1.10.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "382e7f4db9a12dc6c19431743a2b096041bcdd62"
+                "reference": "35a4a70cd94e09e2259dfae7488afc6b474ecbd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/382e7f4db9a12dc6c19431743a2b096041bcdd62",
-                "reference": "382e7f4db9a12dc6c19431743a2b096041bcdd62",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/35a4a70cd94e09e2259dfae7488afc6b474ecbd3",
+                "reference": "35a4a70cd94e09e2259dfae7488afc6b474ecbd3",
                 "shasum": ""
             },
             "require": {
-                "php": "~7.1"
+                "php": "~7.1 || ^8.0"
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
@@ -430,7 +430,7 @@
                 "redis",
                 "xcache"
             ],
-            "time": "2019-11-29T15:36:20+00:00"
+            "time": "2020-05-27T16:24:54+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -3869,16 +3869,16 @@
         },
         {
             "name": "rennokki/befriended",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/renoki-co/befriended.git",
-                "reference": "981569ce04e7538cdbc280d0ec84dfbcc2dff69d"
+                "reference": "71ef7968133b19a108978dd99a6b5e7f1dd9fd79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/renoki-co/befriended/zipball/981569ce04e7538cdbc280d0ec84dfbcc2dff69d",
-                "reference": "981569ce04e7538cdbc280d0ec84dfbcc2dff69d",
+                "url": "https://api.github.com/repos/renoki-co/befriended/zipball/71ef7968133b19a108978dd99a6b5e7f1dd9fd79",
+                "reference": "71ef7968133b19a108978dd99a6b5e7f1dd9fd79",
                 "shasum": ""
             },
             "require": {
@@ -3932,7 +3932,7 @@
                 "model",
                 "social"
             ],
-            "time": "2020-04-29T17:08:44+00:00"
+            "time": "2020-06-04T20:59:24+00:00"
         },
         {
             "name": "rennokki/rating",
