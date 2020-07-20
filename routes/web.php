@@ -65,15 +65,12 @@ Route::get('/feed', 'BlogController@feeds')->name('blog_feeds');
 
 //Blog access to create articles peremission role
 Route::group(['prefix' => 'blog'], function () {
-    //Blog Approve Post and Viralice
-    Route::get('approve/{post_id}/{telegram?}/{twitter?}/{push?}/{facebook?}', 'BlogController@approve_post')->name('blog_post_approve')->where('post_id', '[0-9]+');
-    //Create
-    Route::get('/create', 'BlogController@create')->name('blog_post_create')->middleware(['role:writer']);
-    Route::get('/edit/{post_id}', 'BlogController@edit')->name('blog_post_edit')->middleware(['role:writer']);
-    Route::post('/store', 'BlogController@store')->name('blog_store')->middleware(['role:writer']);
-    Route::post('/update/{post_id}', 'BlogController@update')->name('blog_update')->middleware(['role:writer']);
-    Route::get('/{blog_category_slug?}/', 'BlogController@index')->name('blog_index');
-    Route::get('/{blog_category_slug}/{entry_slug}', 'BlogController@show')->name('blog_post');
+    //redirect Here alla routes Here yo want to redirect all toyes 
+    Route::redirect('/', 'https://blog.bachecubano.com');
+    //Route to resolve all routes to destination
+    Route::redirect('{blog_category_slug?}/', 'https://blog.bachecubano.com/{blog_category_slug}');
+    //Rotue to redirect al rouutes to specific post
+    Route::redirect('{blog_category_slug}/{entry_slug}', 'https://blog.bachecubano.com/{blog_category_slug}/{entry_slug}');
 });
 
 //Telegram Routes with token parameter
