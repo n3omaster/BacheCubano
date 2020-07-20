@@ -80,6 +80,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/role_premission_create', 'Admin\UserController@role_premission_create')->name('role_premission_create');
 });
 
+
 //User Routes for Configuration (Mainly registered area) with some Auth Middleware
 Route::group(['prefix' => 'home', 'middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('home');
