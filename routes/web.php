@@ -61,12 +61,11 @@ Route::get('/css/bch1.css', 'WelcomeController@bachecubano_css')->name('bachecub
 Route::get('/js/bch1.js', 'WelcomeController@bachecubano_js')->name('bachecubano_js');
 
 //Feeds
-Route::get('/feed', 'BlogController@feeds')->name('blog_feeds');
-
+Route::redirect('/feed', 'https://blog.bachecubano.com/feed')->name('blog_feeds');
 //Blog access to create articles peremission role
 Route::group(['prefix' => 'blog'], function () {
     //redirect Here alla routes Here yo want to redirect all toyes 
-    Route::redirect('/', 'https://blog.bachecubano.com');
+    Route::redirect('/', 'https://blog.bachecubano.com')->name('blog_index');
     //Route to resolve all routes to destination
     Route::redirect('{blog_category_slug?}/', 'https://blog.bachecubano.com/{blog_category_slug}');
     //Rotue to redirect al rouutes to specific post
