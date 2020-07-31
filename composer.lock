@@ -4052,21 +4052,21 @@
         },
         {
             "name": "rennokki/befriended",
-            "version": "3.3.0",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/renoki-co/befriended.git",
-                "reference": "71ef7968133b19a108978dd99a6b5e7f1dd9fd79"
+                "reference": "96d1a0ed1c3d42b6c9f763b392de80737dc5ba74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/renoki-co/befriended/zipball/71ef7968133b19a108978dd99a6b5e7f1dd9fd79",
-                "reference": "71ef7968133b19a108978dd99a6b5e7f1dd9fd79",
+                "url": "https://api.github.com/repos/renoki-co/befriended/zipball/96d1a0ed1c3d42b6c9f763b392de80737dc5ba74",
+                "reference": "96d1a0ed1c3d42b6c9f763b392de80737dc5ba74",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.10",
-                "laravel/framework": "^6.0|^7.0"
+                "laravel/framework": "^6.2|^7.22.1"
             },
             "require-dev": {
                 "orchestra/database": "^5.0",
@@ -4115,7 +4115,13 @@
                 "model",
                 "social"
             ],
-            "time": "2020-06-04T20:59:24+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/renoki-co",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-07-27T15:27:27+00:00"
         },
         {
             "name": "rennokki/rating",
