@@ -4119,20 +4119,20 @@
         },
         {
             "name": "rennokki/rating",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/renoki-co/rating.git",
-                "reference": "e7db135c2ed57aadf5acc3ff1ad49f7756f2dc85"
+                "reference": "9ca771d178eac3b4b942e527cc789326d84e3dfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/renoki-co/rating/zipball/e7db135c2ed57aadf5acc3ff1ad49f7756f2dc85",
-                "reference": "e7db135c2ed57aadf5acc3ff1ad49f7756f2dc85",
+                "url": "https://api.github.com/repos/renoki-co/rating/zipball/9ca771d178eac3b4b942e527cc789326d84e3dfa",
+                "reference": "9ca771d178eac3b4b942e527cc789326d84e3dfa",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^6.0|^7.0"
+                "laravel/framework": "^6.2|^7.22.1"
             },
             "require-dev": {
                 "orchestra/database": "^5.0",
@@ -4175,7 +4175,13 @@
                 "stars",
                 "system"
             ],
-            "time": "2020-04-29T17:07:40+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/renoki-co",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-07-27T15:26:38+00:00"
         },
         {
             "name": "spatie/browsershot",
