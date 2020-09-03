@@ -16,7 +16,7 @@
 
     # Redirect non-www to www
     RewriteCond %{HTTP_HOST} ^bachecubano.com [NC]
-    RewriteRule ^(.*)$ http://www.bachecubano.com/$1 [L,R=301]
+    RewriteRule ^(.*)$ https://www.bachecubano.com/$1 [L,R=301]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
