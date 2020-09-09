@@ -16,7 +16,7 @@
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.5",
         "intervention/image": "^2.5",
-        "irazasyed/telegram-bot-sdk": "3.1.0",
+        "irazasyed/telegram-bot-sdk": "3.2.0",
         "laravel-notification-channels/facebook": "^0.1.0",
         "laravel-notification-channels/facebook-poster": "^2.0",
         "laravel-notification-channels/telegram": "^0.4.0",
