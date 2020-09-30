@@ -21,10 +21,11 @@
 <script src="{{ route('bachecubano_js') }}"></script>
 
 <!--Google Adsense -->
+{{--
 @if($show_ads)
 <script async data-ad-client="ca-pub-9876511577005081" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 @endif
+--}}
 
 @stack('script')
 
