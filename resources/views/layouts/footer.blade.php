@@ -1,3 +1,5 @@
+<iframe data-aa="1517299" src="//ad.a-ads.com/1517299?size=728x90" scrolling="no" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+
 <!-- Footer Section Start -->
 <footer>
     <!-- Footer Area Start -->
@@ -12,22 +14,6 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
                     <div class="widget">
                         <h3 class="block-title"><a href="{{ config('app.url') }}" class="text-white">eCommerce en Cuba</a></h3>
-                        <!--
-                        <ul class="media-content-list">
-                            <li>
-                                <div class="media-left">
-                                    <img class="img-fluid" src="https://img.bachecubano.com/uploads/1249/151756.jpg" alt="Xiaomi Mi Band 4" loading=lazy>
-                                    <div class="overlay">
-                                        <span class="price">$ 50</span>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a href="http://bit.ly/2n117oq">Xiaomi Mi Band 4</a></h4>
-                                    <span class="date">5 514 9081</span>
-                                </div>
-                            </li>
-                        </ul>
-                        -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
