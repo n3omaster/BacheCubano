@@ -110,6 +110,8 @@ class WelcomeController extends Controller
             })[0]->title;
         }
 
+        $show_ads = true;
+
         //Analize the variable submit, could be better
         return view('welcome', compact('promoted_ads', 'SchemaLD', 'show_ads', 'province_name'));
     }
