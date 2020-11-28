@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Schema;
 
 use App\Category;
 use App\Post;
-use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 

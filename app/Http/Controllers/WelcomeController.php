@@ -61,8 +61,6 @@ class WelcomeController extends Controller
                 ->get();
         });
 
-        //testimonial
-
         //Schema
         $SchemaLD = Schema::WholesaleStore()
             ->name('Bachecubano')
@@ -102,9 +100,6 @@ class WelcomeController extends Controller
                     ->contactType("sales")
                     ->email('contacto@bachecubano.com')
             );
-
-        //Hide here the Google Ads
-        $show_ads = false;
 
         //Provinces for main Page SEO
         if ($province_slug == "www") {
@@ -289,7 +284,7 @@ class WelcomeController extends Controller
 
         // Loop the css Array
         foreach ($css as $css_file) {
-            // Load the content of the css file 
+            // Load the content of the css file
             $css_content .= file_get_contents($css_file);
         }
 
@@ -319,7 +314,7 @@ class WelcomeController extends Controller
 
         // Loop the css Array
         foreach ($js as $js_file) {
-            // Load the content of the css file 
+            // Load the content of the css file
             $js_content .= file_get_contents($js_file) . "\n";
         }
 

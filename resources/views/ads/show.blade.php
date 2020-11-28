@@ -72,7 +72,7 @@
                         slideSpeed: 300,
                         paginationSpeed: 400
                         // "singleItem:true" is a shortcut for:
-                        // items : 1, 
+                        // items : 1,
                         // itemsDesktop : false,
                         // itemsDesktopSmall : false,
                         // itemsTablet: false,
@@ -104,11 +104,6 @@
                                     <p><strong><i class="lni-map-marker"></i> Ubicación:</strong> <a href="#{{ $ad->location->slug }}">{{ $ad->location->title }}</a></p>
                                 </li>
                                 @endif
-                                <!--
-                                <li>
-                                    <p><strong><i class="lni-package"></i> Marca:</strong> <a href="#"> xxx</a></p>
-                                </li>
-                                -->
                             </ul>
                             <div class="details-meta">
                                 <span><a href="#" title="ID del anuncio"><i class="lni-information"></i> {{ $ad->id }}</a></span>

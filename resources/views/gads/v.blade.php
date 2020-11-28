@@ -1,5 +1,5 @@
-<!-- Explicit Ad Left Square -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9876511577005081" data-ad-slot="1908002875" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<div class="row">
+    <div class="col text-center">
+        <iframe data-aa="1518325" src="//ad.a-ads.com/1518325?size=250x250" scrolling="no" style="width:250px; height:250px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+    </div>
+</div>
