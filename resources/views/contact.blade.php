@@ -125,26 +125,6 @@
                             <span class="detail">contact@bachecubano.com</span>
                         </div>
                     </div>
-                    <div class="contact-datails">
-                        <div class="icon">
-                            <i class="lni-phone-handset icon-radius"></i>
-                        </div>
-                        <div class="info">
-                            <h3>Llámanos</h3>
-                            <span class="detail">Oficina: +53 7 642 5371</span>
-                        </div>
-                    </div>
-                    <div class="contact-datails">
-                        <div class="icon">
-                            <i class="lni-phone icon-radius"></i>
-                        </div>
-                        <div class="info">
-                            <h3>Celular</h3>
-                            <span class="detail">(+53) 5 514 9081</span>
-                            <br>
-                            <span class="detail">(+53) 5 466 3598</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
