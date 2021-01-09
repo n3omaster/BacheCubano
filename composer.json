@@ -35,7 +35,7 @@
         "spatie/laravel-sitemap": "^5.3",
         "spatie/schema-org": "^3.0",
         "tedivm/fetch": "^0.7.1",
-        "zgabievi/promocodes": "^2.3"
+        "zgabievi/promocodes": "^8.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
