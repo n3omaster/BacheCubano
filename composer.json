@@ -27,7 +27,7 @@
         "laravel/tinker": "^2.2",
         "overtrue/laravel-like": "^2.0",
         "predis/predis": "^1.1",
-        "renatomarinho/laravel-page-speed": "^1.8",
+        "renatomarinho/laravel-page-speed": "^2.0",
         "rennokki/befriended": "^3.0",
         "rennokki/rating": "^2.0",
         "spatie/laravel-permission": "^3.11",
